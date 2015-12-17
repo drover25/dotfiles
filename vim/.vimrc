@@ -18,6 +18,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'kien/ctrlp.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
+Plug 'rking/ag.vim'
 
 " git plugins
 Plug 'tpope/vim-fugitive'
@@ -31,6 +32,7 @@ Plug 'tpope/vim-surround'
 Plug 'Valloric/MatchTagAlways'
 Plug 'Raimondi/delimitMate'
 Plug 'easymotion/vim-easymotion'
+Plug 'justinmk/vim-sneak'
 Plug 'vim-scripts/CursorLineCurrentWindow'
 
 " Snippets
@@ -47,6 +49,7 @@ Plug 'majutsushi/tagbar'
 Plug 'christoomey/vim-tmux-navigator'
 
 " Themes
+Plug 'altercation/vim-colors-solarized'
 Plug 'w0ng/vim-hybrid'
 
 " Statusbar plugins
@@ -107,7 +110,6 @@ set laststatus=2
 " Quick save and exit
 nnoremap <leader>w :w<CR>
 nnoremap <leader>wq :wq<CR>
-nnoremap <leader>q :q<CR>
 
 " Tab cycling
 nnoremap <Tab> :bnext<CR>
