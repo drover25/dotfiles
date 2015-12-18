@@ -31,9 +31,9 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'Valloric/MatchTagAlways'
 Plug 'Raimondi/delimitMate'
-Plug 'easymotion/vim-easymotion'
 Plug 'justinmk/vim-sneak'
 Plug 'vim-scripts/CursorLineCurrentWindow'
+Plug 'osyo-manga/vim-over'
 
 " Snippets
 Plug 'SirVer/ultisnips'
@@ -77,9 +77,6 @@ syntax on
 set background=dark
 colorscheme hybrid
 set guifont=Menlo\ for\ Powerline
-
-" Show line numbers
-set number
 
 " Highlight search results
 set hls
@@ -183,10 +180,12 @@ let g:airline_theme='hybrid'
 
 " ----- tpope/vim-fugitive -----
 nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gc :Gcommit<CR>
 nnoremap <leader>gb :Gblame<CR>
-nnoremap <leader>ga :Gwrite<CR>
 
 " ----- nathanaelkane/vim-indent-guides -----
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
+
+
+" ----- justinmk/vim-sneak -----
+let g:sneak#streak = 1
