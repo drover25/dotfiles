@@ -28,6 +28,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
 Plug 'Valloric/MatchTagAlways'
 Plug 'Raimondi/delimitMate'
@@ -49,8 +50,7 @@ Plug 'majutsushi/tagbar'
 Plug 'christoomey/vim-tmux-navigator'
 
 " Themes
-Plug 'altercation/vim-colors-solarized'
-Plug 'w0ng/vim-hybrid'
+Plug 'kristijanhusak/vim-hybrid-material'
 
 " Statusbar plugins
 Plug 'bling/vim-airline'
@@ -75,8 +75,7 @@ syntax on
 
 " Setup theme
 set background=dark
-colorscheme hybrid
-set guifont=Menlo\ for\ Powerline
+colorscheme hybrid_material
 
 " Highlight search results
 set hls
@@ -136,9 +135,8 @@ let g:UltiSnipsJumpForwardTrigger = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 
 " ----- scrooloose/syntastic -----
-let g:syntastic_mode_map = {'mode': 'passive'}
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 2
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
