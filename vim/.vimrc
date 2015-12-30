@@ -3,7 +3,7 @@ set hidden
 
 filetype off
 
-"Try Plug
+let is_google = filereadable($HOME . '/.google_vimrc') && !has("nvim")
 
 call plug#begin('~/.vim/plugged')
 " Syntax plugins
@@ -35,6 +35,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'justinmk/vim-sneak'
 Plug 'vim-scripts/CursorLineCurrentWindow'
 Plug 'osyo-manga/vim-over'
+Plug 'terryma/vim-multiple-cursors'
 
 " Snippets
 Plug 'SirVer/ultisnips'
@@ -57,8 +58,7 @@ Plug 'bling/vim-airline'
 Plug 'edkolev/tmuxline.vim'
 
 " Code completion
-if !filereadable($HOME . '/google_vimrc')
-else
+if !is_google
   Plug 'Valloric/YouCompleteMe'
 endif
 
@@ -120,7 +120,7 @@ vnoremap jk <Esc>
 " Source google vimrc if we have it "
 "==================================="
 
-if filereadable($HOME . '/.google_vimrc')
+if is_google
   source ~/.google_vimrc
 endif
 
@@ -139,9 +139,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
-" ----- scrooloose/nerdtree -----
-map <C-n> :NERDTreeToggle<CR>
 
 " ----- kien/ctrlp.vim -----
 let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
