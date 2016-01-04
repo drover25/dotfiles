@@ -30,6 +30,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-obsession'
 Plug 'Valloric/MatchTagAlways'
 Plug 'Raimondi/delimitMate'
 Plug 'justinmk/vim-sneak'
@@ -48,10 +49,12 @@ Plug 'xolox/vim-easytags'
 Plug 'majutsushi/tagbar'
 
 " TMUX integration
+Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
 
 " Themes
 Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'w0ng/vim-hybrid'
 
 " Statusbar plugins
 Plug 'bling/vim-airline'
