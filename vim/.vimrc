@@ -41,7 +41,6 @@ Plug 'terryma/vim-multiple-cursors'
 " Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'nathanaelkane/vim-indent-guides'
 
 " Tags to get to functions classes etc.
 Plug 'xolox/vim-misc'
@@ -101,6 +100,8 @@ let mapleader=','
 " Statusbar config
 set laststatus=2
 
+" No wrap
+set nowrap
 
 "=================="
 " Custom shortcuts "
@@ -118,6 +119,8 @@ nnoremap <S-Tab> :bprevious<CR>
 inoremap jk <Esc>
 vnoremap jk <Esc>
 
+" Toggle paste mode
+set pastetoggle=<F2>
 
 "==================================="
 " Source google vimrc if we have it "
@@ -179,11 +182,6 @@ let g:airline_theme='hybrid'
 " ----- tpope/vim-fugitive -----
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gb :Gblame<CR>
-
-" ----- nathanaelkane/vim-indent-guides -----
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
-
 
 " ----- justinmk/vim-sneak -----
 let g:sneak#streak = 1
