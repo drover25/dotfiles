@@ -16,9 +16,9 @@ Plug 'tpope/vim-git'
 " Navigation
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'rking/ag.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " git plugins
 Plug 'tpope/vim-fugitive'
@@ -146,18 +146,18 @@ let g:syntastic_auto_loc_list = 2
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" ----- kien/ctrlp.vim -----
-let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
-      \ --ignore .git
-      \ --ignore .svn
-      \ --ignore .hg
-      \ --ignore .DS_Store
-      \ --ignore "**/*.pyc"
-      \ --ignore .git5_specs
-      \ --ignore review
-      \ -g ""'
-let g:ctrlp_match_func = {'match': 'pymatcher#PyMatch'}
-let g:ctrlp_working_path_mode = 0
+" ----- junegunn/fzf -----
+nmap <silent> <c-p> :Files<CR>
+" Mapping selecting mappings
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+
+ " Insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
 
 " ----- xolox/vim-easytags settings -----
 " Where to look for tags files
