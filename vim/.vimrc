@@ -15,7 +15,7 @@ Plug 'tpope/vim-git'
 
 " Navigation
 Plug 'tpope/vim-vinegar'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/github/dotfiles/fzf/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " git plugins
