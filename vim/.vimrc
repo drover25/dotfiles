@@ -14,9 +14,7 @@ Plug 'vim-scripts/SWIG-syntax'
 Plug 'tpope/vim-git'
 
 " Navigation
-Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
-Plug 'rking/ag.vim'
+Plug 'tpope/vim-vinegar'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
