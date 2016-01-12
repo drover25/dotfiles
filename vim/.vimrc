@@ -34,7 +34,6 @@ Plug 'Raimondi/delimitMate'
 Plug 'justinmk/vim-sneak'
 Plug 'vim-scripts/CursorLineCurrentWindow'
 Plug 'osyo-manga/vim-over'
-Plug 'terryma/vim-multiple-cursors'
 
 " Snippets
 Plug 'SirVer/ultisnips'
