@@ -3,7 +3,7 @@ set hidden
 
 filetype off
 
-let is_google = filereadable($HOME . '/.google_vimrc') && !has("nvim")
+let is_google = filereadable($HOME . '/.google_vimrc')
 
 call plug#begin('~/.vim/plugged')
 " Syntax plugins
@@ -23,17 +23,18 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " Shortcuts and general
+Plug 'justinmk/vim-sneak'
+Plug 'osyo-manga/vim-over'
+Plug 'qpkorr/vim-bufkill'
+Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-unimpaired'
 Plug 'Valloric/MatchTagAlways'
-Plug 'Raimondi/delimitMate'
-Plug 'justinmk/vim-sneak'
 Plug 'vim-scripts/CursorLineCurrentWindow'
-Plug 'osyo-manga/vim-over'
 
 " Snippets
 Plug 'SirVer/ultisnips'
