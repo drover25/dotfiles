@@ -48,6 +48,10 @@ export PATH="$HOME/neovim/bin:$PATH"
 #---------------
 # Map z to j for fasd plugin
 alias j='z'
+# Map vi to nvim
+alias vi='nvim'
+# Map vim to nvim
+alias vim='nvim'
 
 #---------------
 # Local setup
