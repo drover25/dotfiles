@@ -51,7 +51,7 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " Themes
 Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'w0ng/vim-hybrid'
+Plug 'altercation/vim-colors-solarized'
 
 " Statusbar plugins
 Plug 'bling/vim-airline'
@@ -74,8 +74,9 @@ filetype plugin indent on
 syntax on
 
 " Setup theme
+let $NEOVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
-colorscheme hybrid_material
+colorscheme solarized
 
 " Highlight search results
 set hls
@@ -146,6 +147,7 @@ let g:syntastic_check_on_wq = 0
 
 " ----- junegunn/fzf -----
 nmap <silent> <c-p> :Files<CR>
+nmap <silent> <c-s> :Buffers<CR>
 " Mapping selecting mappings
 nmap <leader><tab> <plug>(fzf-maps-n)
 xmap <leader><tab> <plug>(fzf-maps-x)
@@ -175,7 +177,6 @@ nmap <silent> <C-m> :TagbarToggle<CR>
 let g:airline_powerline_fonts = 1
 let g:airline_detct_paste = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='hybrid'
 
 " ----- tpope/vim-fugitive -----
 nnoremap <leader>gs :Gstatus<CR>

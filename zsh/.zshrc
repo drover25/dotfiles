@@ -29,8 +29,6 @@ source $ZSH/oh-my-zsh.sh
 if [ -n "$DISPLAY" -a "$TERM" "==" "xterm" ]; then
     export TERM=xterm-256color
 fi
-BASE16_SHELL="$HOME/.vim/plugged/vim-hybrid-material/base16-material/base16-material.dark.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 #---------------
 # nVim setup
