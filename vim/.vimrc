@@ -162,6 +162,7 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 " ----- xolox/vim-easytags settings -----
 " Where to look for tags files
 set tags=./tags;,~/.vimtags
+let g:easytags_include_members = 1
 
 " ----- tpope/vim-sensible -----
 let g:easytags_events = ['BufReadPost', 'BufWritePost']
