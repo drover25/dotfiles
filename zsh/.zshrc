@@ -29,6 +29,7 @@ source $ZSH/oh-my-zsh.sh
 if [ -n "$DISPLAY" -a "$TERM" "==" "xterm" ]; then
     export TERM=xterm-256color
 fi
+[ -f $DOTFILES_REPO/dircolors/.dircolors ] && eval `dircolors $DOTFILES_REPO/dircolors/.dircolors`
 
 #---------------
 # nVim setup
