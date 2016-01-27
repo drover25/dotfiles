@@ -23,8 +23,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " Shortcuts and general
-Plug 'justinmk/vim-sneak'
-Plug 'osyo-manga/vim-over'
 Plug 'qpkorr/vim-bufkill'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-commentary'
@@ -163,8 +161,6 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 " Where to look for tags files
 set tags=./tags;,~/.vimtags
 let g:easytags_include_members = 1
-
-" ----- tpope/vim-sensible -----
 let g:easytags_events = ['BufReadPost', 'BufWritePost']
 let g:easytags_async = 1
 let g:easytags_dynamic_files = 2
@@ -177,11 +173,10 @@ nmap <silent> <C-m> :TagbarToggle<CR>
 " ----- bling/vim-airline -----
 let g:airline_powerline_fonts = 1
 let g:airline_detct_paste = 1
-let g:airline#extensions#tabline#enabled = 1
 
 " ----- tpope/vim-fugitive -----
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gb :Gblame<CR>
 
-" ----- justinmk/vim-sneak -----
-let g:sneak#streak = 1
+" ----- Valloric/YouCompleteMe -----
+nnoremap <C-]> :YcmCompleter GoTo<CR>

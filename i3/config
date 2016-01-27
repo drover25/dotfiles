@@ -199,7 +199,7 @@ bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -bw 0 -bc "$bg-color" -bg "$bg
 bindsym $mod+c exec google-chrome
 
 # Lock screen
-bindsym Mod1+Control+l exec i3lock -t -i $wallpaper
+bindsym Mod1+Control+l exec i3lock -t -i "/usr/local/google/home/drover/Pictures/solarized_stretched.png"
 
 # Setup audio controls
 bindsym F10 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
