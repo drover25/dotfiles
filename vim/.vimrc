@@ -33,6 +33,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'Valloric/MatchTagAlways'
 Plug 'vim-scripts/CursorLineCurrentWindow'
+Plug 'junegunn/goyo.vim'
 
 " Snippets
 Plug 'SirVer/ultisnips'
@@ -52,7 +53,8 @@ Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'altercation/vim-colors-solarized'
 
 " Statusbar plugins
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline', { 'commit': '70ca735af008b413a611420ca34d38fc4d5f6088' }
+Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
 
 " Code completion
@@ -170,7 +172,7 @@ let g:easytags_suppress_ctags_warning = 1
 " ----- majutsushi/tagbar settings -----
 nmap <silent> <C-m> :TagbarToggle<CR>
 
-" ----- bling/vim-airline -----
+" ----- vim-airline/vim-airline -----
 let g:airline_powerline_fonts = 1
 let g:airline_detct_paste = 1
 
