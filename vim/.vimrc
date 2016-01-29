@@ -42,7 +42,6 @@ Plug 'honza/vim-snippets'
 " Tags to get to functions classes etc.
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
-Plug 'majutsushi/tagbar'
 
 " TMUX integration
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -74,7 +73,6 @@ filetype plugin indent on
 syntax on
 
 " Setup theme
-let $NEOVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
 colorscheme solarized
 
@@ -98,9 +96,6 @@ let mapleader=','
 
 " Statusbar config
 set laststatus=2
-
-" No wrap
-set nowrap
 
 "=================="
 " Custom shortcuts "
@@ -168,9 +163,6 @@ let g:easytags_async = 1
 let g:easytags_dynamic_files = 2
 let g:easytags_resolve_links = 1
 let g:easytags_suppress_ctags_warning = 1
-
-" ----- majutsushi/tagbar settings -----
-nmap <silent> <C-m> :TagbarToggle<CR>
 
 " ----- vim-airline/vim-airline -----
 let g:airline_powerline_fonts = 1
