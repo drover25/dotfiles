@@ -52,7 +52,7 @@ Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'altercation/vim-colors-solarized'
 
 " Statusbar plugins
-Plug 'vim-airline/vim-airline', { 'commit': '70ca735af008b413a611420ca34d38fc4d5f6088' }
+Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
 
@@ -62,6 +62,14 @@ if !is_google
 endif
 
 call plug#end()
+
+"==================================="
+" Source google vimrc if we have it "
+"==================================="
+
+if is_google
+  source ~/.google_vimrc
+endif
 
 filetype plugin indent on
 
@@ -115,15 +123,6 @@ vnoremap jk <Esc>
 
 " Toggle paste mode
 set pastetoggle=<F2>
-
-"==================================="
-" Source google vimrc if we have it "
-"==================================="
-
-if is_google
-  source ~/.google_vimrc
-endif
-
 
 "=================="
 " Package Settings "
