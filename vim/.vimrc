@@ -63,14 +63,6 @@ endif
 
 call plug#end()
 
-"==================================="
-" Source google vimrc if we have it "
-"==================================="
-
-if is_google
-  source ~/.google_vimrc
-endif
-
 filetype plugin indent on
 
 "===================="
@@ -104,6 +96,14 @@ let mapleader=','
 
 " Statusbar config
 set laststatus=2
+
+"==================================="
+" Source google vimrc if we have it "
+"==================================="
+
+if is_google
+  source ~/.google_vimrc
+endif
 
 "=================="
 " Custom shortcuts "
