@@ -3,7 +3,7 @@ export DOTFILES_REPO=$HOME/github/dotfiles
 export ZSH_CUSTOM=$DOTFILES_REPO/zsh/custom
 
 ZSH_THEME="drover"
-plugins=(common-aliases git-extras fasd)
+plugins=(common-aliases git git-extras fasd)
 
 # User configuration
 
