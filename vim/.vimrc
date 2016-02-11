@@ -9,7 +9,6 @@ call plug#begin('~/.vim/plugged')
 " Syntax plugins
 Plug 'tmux-plugins/vim-tmux'
 Plug 'dag/vim-fish'
-Plug 'scrooloose/syntastic'
 Plug 'vim-scripts/SWIG-syntax'
 Plug 'tpope/vim-git'
 
@@ -56,6 +55,15 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
 
+if has('nvim')
+  " Syntax plugins
+  " Plug 'benekastah/neomake'
+  Plug 'hauleth/neomake', {'branch': 'fix/291'}
+else
+  " Syntax plugins
+  Plug 'scrooloose/syntastic'
+endif
+
 " Code completion
 if !is_google
   Plug 'Valloric/YouCompleteMe'
@@ -94,9 +102,6 @@ nnoremap <s-k> <CR>
 " or anything else (some people like ';').
 let mapleader=','
 
-" Statusbar config
-set laststatus=2
-
 "==================================="
 " Source google vimrc if we have it "
 "==================================="
@@ -133,11 +138,26 @@ let g:UltiSnipsExpandTrigger = "<c-j>"
 let g:UltiSnipsJumpForwardTrigger = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 
-" ----- scrooloose/syntastic -----
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 2
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+if has('nvim')
+  " ----- benekastah/neomake -----
+  autocmd! BufWritePost,BufEnter * Neomake
+  hi MyErrorMsg ctermbg=black ctermfg=red cterm=bold
+  let g:neomake_error_sign = {
+        \ 'text': '>>',
+        \ 'texthl': 'MyErrorMsg',
+        \ }
+  hi MyWarningMsg ctermbg=black ctermfg=magenta cterm=bold
+  let g:neomake_warning_sign = {
+        \ 'text': '>>',
+        \ 'texthl': 'MyWarningMsg',
+        \ }
+else
+  " ----- scrooloose/syntastic -----
+  let g:syntastic_always_populate_loc_list = 1
+  let g:syntastic_auto_loc_list = 2
+  let g:syntastic_check_on_open = 1
+  let g:syntastic_check_on_wq = 0
+endif
 
 " ----- junegunn/fzf -----
 nmap <silent> <c-p> :Files<CR>
