@@ -12,6 +12,18 @@ Plug 'dag/vim-fish'
 Plug 'vim-scripts/SWIG-syntax'
 Plug 'tpope/vim-git'
 
+" Sensible defaults
+Plug 'tpope/vim-sensible'
+
+" Allow plugins to harness .
+Plug 'tpope/vim-repeat'
+
+" Surround action for text objects
+Plug 'tpope/vim-surround'
+
+" Add some more text objects
+Plug 'wellle/targets.vim'
+
 " Navigation
 Plug 'tpope/vim-vinegar'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -21,19 +33,23 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
-" Shortcuts and general
+" For concentrating on one thing
 Plug 'junegunn/goyo.vim'
+
+" Kill buffers w/o killing the split
 Plug 'qpkorr/vim-bufkill'
+
+" Automatic closing quote, bracket etc.
 Plug 'Raimondi/delimitMate'
+
+" Visualize the undo tree
 Plug 'sjl/gundo.vim'
+
+" Comment all the things
 Plug 'tpope/vim-commentary'
+
+" Save vim sessions. Works nice with TMUX
 Plug 'tpope/vim-obsession'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-Plug 'Valloric/MatchTagAlways'
-Plug 'vim-scripts/CursorLineCurrentWindow'
 
 " Snippets
 Plug 'SirVer/ultisnips'
@@ -56,14 +72,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
 
-if has('nvim')
-  " Syntax plugins
-  " Plug 'benekastah/neomake'
-  Plug 'hauleth/neomake', {'branch': 'fix/291'}
-else
-  " Syntax plugins
-  Plug 'scrooloose/syntastic'
-endif
+" Async make. Lots of linters built in.
+" Plug 'benekastah/neomake'
+Plug 'hauleth/neomake', {'branch': 'fix/291'}
 
 " Code completion
 if !is_google
@@ -119,16 +130,23 @@ endif
 nnoremap <leader>w :w<CR>
 nnoremap <leader>wq :wq<CR>
 
-" Tab cycling
-nnoremap <Tab> :bnext<CR>
-nnoremap <S-Tab> :bprevious<CR>
-
 " Get back to normal quickly
 inoremap jk <Esc>
 vnoremap jk <Esc>
 
 " Toggle paste mode
 set pastetoggle=<F2>
+
+if has('nvim')
+  " Get back to normal quickly
+  tnoremap jk <C-\><C-n>
+
+  " Move from the neovim terminal window to somewhere else
+  tnoremap <C-h> <C-\><C-n><C-w>h
+  tnoremap <C-j> <C-\><C-n><C-w>j
+  tnoremap <C-k> <C-\><C-n><C-w>k
+  tnoremap <C-l> <C-\><C-n><C-w>l
+endif
 
 "=================="
 " Package Settings "
@@ -139,26 +157,18 @@ let g:UltiSnipsExpandTrigger = "<c-j>"
 let g:UltiSnipsJumpForwardTrigger = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 
-if has('nvim')
-  " ----- benekastah/neomake -----
-  autocmd! BufWritePost,BufEnter * Neomake
-  hi MyErrorMsg ctermbg=black ctermfg=red cterm=bold
-  let g:neomake_error_sign = {
-        \ 'text': '>>',
-        \ 'texthl': 'MyErrorMsg',
-        \ }
-  hi MyWarningMsg ctermbg=black ctermfg=magenta cterm=bold
-  let g:neomake_warning_sign = {
-        \ 'text': '>>',
-        \ 'texthl': 'MyWarningMsg',
-        \ }
-else
-  " ----- scrooloose/syntastic -----
-  let g:syntastic_always_populate_loc_list = 1
-  let g:syntastic_auto_loc_list = 2
-  let g:syntastic_check_on_open = 1
-  let g:syntastic_check_on_wq = 0
-endif
+" ----- benekastah/neomake -----
+autocmd! BufWritePost,BufEnter * Neomake
+hi MyErrorMsg ctermbg=black ctermfg=red cterm=bold
+let g:neomake_error_sign = {
+      \ 'text': '>>',
+      \ 'texthl': 'MyErrorMsg',
+      \ }
+hi MyWarningMsg ctermbg=black ctermfg=magenta cterm=bold
+let g:neomake_warning_sign = {
+      \ 'text': '>>',
+      \ 'texthl': 'MyWarningMsg',
+      \ }
 
 " ----- junegunn/fzf -----
 nmap <silent> <c-p> :Files<CR>
