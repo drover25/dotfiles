@@ -22,8 +22,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " Shortcuts and general
+Plug 'junegunn/goyo.vim'
 Plug 'qpkorr/vim-bufkill'
 Plug 'Raimondi/delimitMate'
+Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-repeat'
@@ -32,7 +34,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'Valloric/MatchTagAlways'
 Plug 'vim-scripts/CursorLineCurrentWindow'
-Plug 'junegunn/goyo.vim'
 
 " Snippets
 Plug 'SirVer/ultisnips'
