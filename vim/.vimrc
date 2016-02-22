@@ -73,8 +73,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
 
 " Async make. Lots of linters built in.
-" Plug 'benekastah/neomake'
-Plug 'hauleth/neomake', {'branch': 'fix/291'}
+Plug 'benekastah/neomake'
 
 " Code completion
 if !is_google
