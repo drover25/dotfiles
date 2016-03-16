@@ -113,6 +113,10 @@ nnoremap <s-k> <CR>
 " or anything else (some people like ';').
 let mapleader=','
 
+" Setup an undodir for persistant undo state.
+set undofile
+set undodir=~/.vim/undodir
+
 "==================================="
 " Source google vimrc if we have it "
 "==================================="
