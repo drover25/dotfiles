@@ -11,6 +11,7 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'dag/vim-fish'
 Plug 'vim-scripts/SWIG-syntax'
 Plug 'tpope/vim-git'
+Plug 'google/vim-ft-bzl'
 
 " Sensible defaults
 Plug 'tpope/vim-sensible'
