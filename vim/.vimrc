@@ -118,6 +118,9 @@ let mapleader=','
 set undofile
 set undodir=~/.vim/undodir
 
+" Disable the preview window
+set completeopt-=preview
+
 "==================================="
 " Source google vimrc if we have it "
 "==================================="
