@@ -34,6 +34,7 @@ fi
 #---------------
 # nVim setup
 #---------------
+export PATH="$HOME/neovim/bin:$PATH"
 export XDG_CONFIG_HOME="$HOME/.config"
 
 #-------------------------
