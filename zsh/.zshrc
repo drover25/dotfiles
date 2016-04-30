@@ -35,7 +35,6 @@ fi
 # nVim setup
 #---------------
 export XDG_CONFIG_HOME="$HOME/.config"
-export PATH="$HOME/neovim/bin:$PATH"
 
 #-------------------------
 # Setup FZF
