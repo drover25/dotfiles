@@ -121,13 +121,19 @@ set undodir=~/.vim/undodir
 " Disable the preview window
 set completeopt-=preview
 
-"==================================="
-" Source google vimrc if we have it "
-"==================================="
+"====================================="
+" Source other vimrcs if we have them "
+"====================================="
 
 if is_google
   source ~/.google_vimrc
 endif
+
+let has_local = filereadable($HOME . '/.local_vimrc')
+if has_local
+  source ~/.local_vimrc
+endif
+
 
 "=================="
 " Custom shortcuts "
