@@ -56,3 +56,5 @@ alias vim='nvim'
 # Local setup
 #---------------
 [ -f ~/.local_zsh.zsh ] && source ~/.local_zsh.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

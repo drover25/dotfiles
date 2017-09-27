@@ -165,6 +165,16 @@ if has('nvim')
   autocmd BufLeave term://* stopinsert
 endif
 
+" copy the current text selection to the system clipboard
+" https://sunaku.github.io/tmux-yank-osc52.html
+if has('gui_running') || has('nvim') && exists('$DISPLAY')
+  noremap <leader>y "+y
+else
+  " copy to attached terminal using the yank(1) script:
+  " https://github.com/sunaku/home/blob/master/bin/yank
+  noremap <silent> <leader>y y:call system('yank > /dev/tty', @0)<Return>
+endif
+
 "=================="
 " Package Settings "
 "=================="
