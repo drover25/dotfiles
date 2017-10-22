@@ -7,10 +7,8 @@ let is_google = filereadable($HOME . '/.google_vimrc')
 
 call plug#begin('~/.vim/plugged')
 " Syntax plugins
-Plug 'tmux-plugins/vim-tmux'
-Plug 'dag/vim-fish'
+Plug 'sheerun/vim-polyglot'
 Plug 'vim-scripts/SWIG-syntax'
-Plug 'tpope/vim-git'
 Plug 'google/vim-ft-bzl'
 
 " Sensible defaults
@@ -26,25 +24,19 @@ Plug 'tpope/vim-surround'
 Plug 'wellle/targets.vim'
 
 " Navigation
-Plug 'tpope/vim-vinegar'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-" git plugins
+" source control plugins
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-
-" For concentrating on one thing
-Plug 'junegunn/goyo.vim'
+Plug 'ludovicchabant/vim-lawrencium'
+Plug 'mhinz/vim-signify'
 
 " Kill buffers w/o killing the split
 Plug 'qpkorr/vim-bufkill'
 
 " Automatic closing quote, bracket etc.
 Plug 'Raimondi/delimitMate'
-
-" Visualize the undo tree
-Plug 'sjl/gundo.vim'
 
 " Comment all the things
 Plug 'tpope/vim-commentary'
@@ -55,10 +47,6 @@ Plug 'tpope/vim-obsession'
 " Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-
-" Tags to get to functions classes etc.
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-easytags'
 
 " TMUX integration
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -198,7 +186,21 @@ let g:neomake_warning_sign = {
       \ }
 
 " ----- junegunn/fzf -----
-nmap <silent> <c-p> :Files<CR>
+" Command for hg files
+command! -bang -nargs=* HGFiles
+  \ call fzf#run(
+  \   fzf#wrap('hg-files',
+  \            {
+  \              'source': 'hg files',
+  \              'options': '-m --prompt "HGFiles> " --color --ansi',
+  \              'sink': 'e'
+  \            },
+  \            <bang>0))
+if is_google
+  nmap <silent> <c-p> :HGFiles<CR>
+else
+  nmap <silent> <c-p> :Files<CR>
+endif
 nmap <silent> <c-s> :Buffers<CR>
 " Mapping selecting mappings
 nmap <leader><tab> <plug>(fzf-maps-n)
@@ -211,23 +213,26 @@ imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
-" ----- xolox/vim-easytags settings -----
-" Where to look for tags files
-set tags=./tags;,~/.vimtags
-let g:easytags_include_members = 1
-let g:easytags_events = ['BufReadPost', 'BufWritePost']
-let g:easytags_async = 1
-let g:easytags_dynamic_files = 2
-let g:easytags_resolve_links = 1
-let g:easytags_suppress_ctags_warning = 1
-
 " ----- vim-airline/vim-airline -----
 let g:airline_powerline_fonts = 1
 let g:airline_detct_paste = 1
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.maxlinenr = ''
 
 " ----- tpope/vim-fugitive -----
 nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gb :Gblame<CR>
+
+" ----- ludovicchabant/vim-lawrencium -----
+nnoremap <leader>hs :Hgstatus<CR>
+nnoremap <leader>ha :Hg amend<CR>
+nnoremap <leader>hu :Hg uploadchain<CR>
+nnoremap <leader>hc :Hgcommit<CR>
+
+" ----- mhinz/vim-signify -----
+let g:signify_realtime = 1
 
 " ----- Valloric/YouCompleteMe -----
 nnoremap <C-]> :YcmCompleter GoTo<CR>
