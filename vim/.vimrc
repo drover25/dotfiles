@@ -64,6 +64,9 @@ Plug 'edkolev/tmuxline.vim'
 " Async make. Lots of linters built in.
 Plug 'benekastah/neomake'
 
+" Language specific plugins
+Plug 'fatih/vim-go'
+
 " Code completion
 if !is_google
   Plug 'Valloric/YouCompleteMe'
