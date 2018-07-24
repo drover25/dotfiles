@@ -5,6 +5,7 @@ export FZF_DEFAULT_COMMAND='(
   git ls-tree -r --name-only HEAD ||
   ag -g "" --hidden) 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_TMUX=1
 
 # Custom fzf path
 # ---------------
