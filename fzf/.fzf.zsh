@@ -1,6 +1,9 @@
 # Use Ag
 # ---------
-export FZF_DEFAULT_COMMAND='ag -g "" --hidden'
+export FZF_DEFAULT_COMMAND='(
+  hg files ||
+  git ls-tree -r --name-only HEAD ||
+  ag -g "" --hidden) 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # Custom fzf path
