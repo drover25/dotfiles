@@ -3,8 +3,6 @@ set hidden
 
 filetype off
 
-let is_google = filereadable($HOME . '/.google_vimrc')
-
 call plug#begin('~/.vim/plugged')
 " Syntax plugins
 Plug 'sheerun/vim-polyglot'
@@ -24,29 +22,21 @@ Plug 'tpope/vim-surround'
 Plug 'wellle/targets.vim'
 
 " Navigation
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
 
 " source control plugins
 Plug 'tpope/vim-fugitive'
-Plug 'ludovicchabant/vim-lawrencium'
 Plug 'mhinz/vim-signify'
 
 " Kill buffers w/o killing the split
 Plug 'qpkorr/vim-bufkill'
-
-" Automatic closing quote, bracket etc.
-Plug 'Raimondi/delimitMate'
 
 " Comment all the things
 Plug 'tpope/vim-commentary'
 
 " Save vim sessions. Works nice with TMUX
 Plug 'tpope/vim-obsession'
-
-" Snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 
 " TMUX integration
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -55,22 +45,18 @@ Plug 'christoomey/vim-tmux-navigator'
 " Themes
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'altercation/vim-colors-solarized'
+Plug 'arcticicestudio/nord-vim'
 
 " Statusbar plugins
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'edkolev/tmuxline.vim'
+" Plug 'edkolev/tmuxline.vim'
 
-" Async make. Lots of linters built in.
-Plug 'benekastah/neomake'
+" LSP
+Plug 'w0rp/ale'
 
 " Language specific plugins
 Plug 'fatih/vim-go'
-
-" Code completion
-if !is_google
-  Plug 'Valloric/YouCompleteMe'
-endif
 
 call plug#end()
 
@@ -85,7 +71,7 @@ syntax on
 
 " Setup theme
 set background=dark
-colorscheme solarized
+colorscheme nord
 
 " Highlight search results
 set hls
@@ -96,10 +82,6 @@ set cursorline
 " use » to mark Tabs and ° to mark trailing whitespace. This is a
 " non-obtrusive way to mark these special characters.
 set list listchars=tab:»\ ,trail:°
-
-" By default, it looks up man pages for the word under the cursor, which isn't
-" very useful, so we map it to something else.
-nnoremap <s-k> <CR>
 
 " Explicitly set the Leader to comma. You you can use '\' (the default),
 " or anything else (some people like ';').
@@ -115,16 +97,10 @@ set completeopt-=preview
 "====================================="
 " Source other vimrcs if we have them "
 "====================================="
-
-if is_google
-  source ~/.google_vimrc
-endif
-
 let has_local = filereadable($HOME . '/.local_vimrc')
 if has_local
   source ~/.local_vimrc
 endif
-
 
 "=================="
 " Custom shortcuts "
@@ -170,40 +146,8 @@ endif
 " Package Settings "
 "=================="
 
-" ----- SirVer/ultisnips -----
-let g:UltiSnipsExpandTrigger = "<c-j>"
-let g:UltiSnipsJumpForwardTrigger = "<c-j>"
-let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
-
-" ----- benekastah/neomake -----
-autocmd! BufWritePost,BufEnter * Neomake
-hi MyErrorMsg ctermbg=black ctermfg=red cterm=bold
-let g:neomake_error_sign = {
-      \ 'text': '>>',
-      \ 'texthl': 'MyErrorMsg',
-      \ }
-hi MyWarningMsg ctermbg=black ctermfg=magenta cterm=bold
-let g:neomake_warning_sign = {
-      \ 'text': '>>',
-      \ 'texthl': 'MyWarningMsg',
-      \ }
-
 " ----- junegunn/fzf -----
-" Command for hg files
-command! -bang -nargs=* HGFiles
-  \ call fzf#run(
-  \   fzf#wrap('hg-files',
-  \            {
-  \              'source': 'hg files',
-  \              'options': '-m --prompt "HGFiles> " --color --ansi',
-  \              'sink': 'e'
-  \            },
-  \            <bang>0))
-if is_google
-  nmap <silent> <c-p> :HGFiles<CR>
-else
-  nmap <silent> <c-p> :Files<CR>
-endif
+nmap <silent> <c-p> :Files<CR>
 nmap <silent> <c-s> :Buffers<CR>
 " Mapping selecting mappings
 nmap <leader><tab> <plug>(fzf-maps-n)
@@ -224,18 +168,13 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_symbols.linenr = ''
 let g:airline_symbols.maxlinenr = ''
+let g:airline#extensions#ale#enabled = 1
 
 " ----- tpope/vim-fugitive -----
 nnoremap <leader>gs :Gstatus<CR>
 
-" ----- ludovicchabant/vim-lawrencium -----
-nnoremap <leader>hs :Hgstatus<CR>
-nnoremap <leader>ha :Hg amend<CR>
-nnoremap <leader>hu :Hg uploadchain<CR>
-nnoremap <leader>hc :Hgcommit<CR>
-
 " ----- mhinz/vim-signify -----
 let g:signify_realtime = 1
 
-" ----- Valloric/YouCompleteMe -----
-nnoremap <C-]> :YcmCompleter GoTo<CR>
+" ----- w0rp/ale -----
+nnoremap <C-]> :ALEGoToDefinition <CR>
