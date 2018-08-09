@@ -174,7 +174,7 @@ let g:airline#extensions#ale#enabled = 1
 nnoremap <leader>gs :Gstatus<CR>
 
 " ----- mhinz/vim-signify -----
-let g:signify_realtime = 1
+" let g:signify_realtime = 1
 
 " ----- w0rp/ale -----
 nnoremap <C-]> :ALEGoToDefinition <CR>
