@@ -3,7 +3,7 @@ export DOTFILES_REPO=$HOME/github/dotfiles
 export ZSH_CUSTOM=$DOTFILES_REPO/zsh/custom
 
 ZSH_THEME="drover"
-plugins=(common-aliases git git-extras fasd virtualenvwrapper)
+plugins=(common-aliases git git-extras mercurial virtualenvwrapper)
 
 # User configuration
 
@@ -34,6 +34,7 @@ fi
 #---------------
 # nVim setup
 #---------------
+export EDITOR=nvim
 export PATH="$HOME/neovim/bin:$PATH"
 export XDG_CONFIG_HOME="$HOME/.config"
 
