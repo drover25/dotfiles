@@ -69,8 +69,17 @@ filetype plugin indent on
 " Enable syntax highlighting
 syntax on
 
+" Enable italics
+set t_ZH=^[[3m
+set t_ZR=^[[23m
+
 " Setup theme
+set termguicolors
 set background=dark
+let g:nord_comment_brightness = 20
+let g:nord_italic = 1
+let g:nord_underline = 1
+let g:nord_italic_comments = 1
 colorscheme nord
 
 " Highlight search results
