@@ -1,9 +1,4 @@
-export ZSH=$HOME/.oh-my-zsh
 export DOTFILES_REPO=$HOME/github/dotfiles
-export ZSH_CUSTOM=$DOTFILES_REPO/zsh/custom
-
-ZSH_THEME="drover"
-plugins=(common-aliases git git-extras mercurial virtualenvwrapper)
 
 # User configuration
 
@@ -21,7 +16,13 @@ path=(
 )
 export PATH
 
-source $ZSH/oh-my-zsh.sh
+source <(antibody init)
+antibody bundle < ~/.zsh_plugins.txt
+
+#------
+# Theme
+#------
+source $DOTFILES_REPO/zsh/custom/themes/drover.zsh-theme
 
 #--------------------
 # Setup shell colors

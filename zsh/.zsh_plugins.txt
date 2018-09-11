@@ -1,0 +1,17 @@
+# Load oh-my-zsh for now...
+robbyrussell/oh-my-zsh folder:lib
+
+# Old oh-my-zsh plugins.
+robbyrussell/oh-my-zsh folder:plugins/common-aliases
+robbyrussell/oh-my-zsh folder:plugins/git
+robbyrussell/oh-my-zsh folder:plugins/git-extras
+robbyrussell/oh-my-zsh folder:plugins/mercurial
+robbyrussell/oh-my-zsh folder:plugins/virtualenvwrapper
+
+# New fancy plugins
+zsh-users/zsh-autosuggestions
+
+# These should be last
+mafredri/zsh-async
+zsh-users/zsh-syntax-highlighting
+
