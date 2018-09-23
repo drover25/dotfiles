@@ -1,4 +1,4 @@
-PROMPT='$(current_dir)$(separator)$(git_prompt_info)$(local_prompt_info)$(prompt)'
+PROMPT='$(current_dir)$(git_prompt_info)$(local_prompt_info)$(prompt)'
 
 function separator() {
   echo -n '%B%F{red}|%f%b'
@@ -13,6 +13,7 @@ function prompt() {
 }
 
 git_prompt_info() {
+  if [[ "$(command git rev-parse --is-inside-work-tree 2>/dev/null)" ]]; then
     local message=""
     local message_color="%F{green}"
 
@@ -20,17 +21,18 @@ git_prompt_info() {
     local unstaged=$(git status --porcelain 2>/dev/null | grep -e "^ M" -e "^??")
 
     if [[ -n ${staged} ]]; then
-        message_color="%F{red}"
+      message_color="%F{red}"
     elif [[ -n ${unstaged} ]]; then
-        message_color="%F{yellow}"
+      message_color="%F{yellow}"
     fi
 
     local branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
     if [[ -n ${branch} ]]; then
-        message+="${message_color}${branch}%f"
+      message+="$(separator)${message_color}${branch}%f"
     fi
 
     echo -n "${message}"
+  fi
 }
 
 # Override in .local_zsh.zsh

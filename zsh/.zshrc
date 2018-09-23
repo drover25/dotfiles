@@ -19,6 +19,8 @@ export PATH
 source <(antibody init)
 antibody bundle < ~/.zsh_plugins.txt
 
+# source ~/.zsh_plugins.sh
+
 #------
 # Theme
 #------

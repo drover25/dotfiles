@@ -1,12 +1,12 @@
 # Load oh-my-zsh for now...
 robbyrussell/oh-my-zsh folder:lib
 
-# Old oh-my-zsh plugins.
 robbyrussell/oh-my-zsh folder:plugins/common-aliases
 robbyrussell/oh-my-zsh folder:plugins/git
 robbyrussell/oh-my-zsh folder:plugins/git-extras
 robbyrussell/oh-my-zsh folder:plugins/mercurial
 robbyrussell/oh-my-zsh folder:plugins/virtualenvwrapper
+robbyrussell/oh-my-zsh folder:plugins/colored-man-pages
 
 # New fancy plugins
 zsh-users/zsh-autosuggestions
