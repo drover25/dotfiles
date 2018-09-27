@@ -1,15 +1,18 @@
 # Load oh-my-zsh for now...
 robbyrussell/oh-my-zsh folder:lib
-
+robbyrussell/oh-my-zsh folder:plugins/colored-man-pages
 robbyrussell/oh-my-zsh folder:plugins/common-aliases
 robbyrussell/oh-my-zsh folder:plugins/git
 robbyrussell/oh-my-zsh folder:plugins/git-extras
 robbyrussell/oh-my-zsh folder:plugins/mercurial
 robbyrussell/oh-my-zsh folder:plugins/virtualenvwrapper
-robbyrussell/oh-my-zsh folder:plugins/colored-man-pages
 
 # New fancy plugins
 zsh-users/zsh-autosuggestions
+
+# Local plugins
+%LOCAL%/zsh/plugins
+%LOCAL%/zsh/themes
 
 # These should be last
 mafredri/zsh-async
