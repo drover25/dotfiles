@@ -1,16 +1,11 @@
 path=(
-    $HOME/bin
-    /usr/lib/google-golang/bin
-    /usr/local/buildtools/java/jdk/bin
     /usr/local/sbin
     /usr/local/bin
     /usr/sbin
     /usr/bin
     /sbin
     /bin
-    $HOME/.rvm/bin
 )
-export PATH
 
 #-----------
 # My plugins

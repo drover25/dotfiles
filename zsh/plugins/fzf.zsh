@@ -1,3 +1,7 @@
+# Custom fzf path
+# ---------------
+fzf_path=$HOME/.fzf
+
 # Use Ag
 # ---------
 export FZF_DEFAULT_COMMAND='(
@@ -18,10 +22,6 @@ _fzf_compgen_dir() {
   git ls-tree -r --name-only HEAD ||
   ag -g $1 --hidden) | sed -e 's:/[^/]*$::' | uniq
 }
-
-# Custom fzf path
-# ---------------
-fzf_path=$HOME/.fzf
 
 # Setup fzf
 # ---------
