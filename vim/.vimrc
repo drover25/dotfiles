@@ -43,8 +43,6 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
 
 " Themes
-Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'altercation/vim-colors-solarized'
 Plug 'arcticicestudio/nord-vim'
 
 " Statusbar plugins
