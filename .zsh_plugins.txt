@@ -11,8 +11,8 @@ robbyrussell/oh-my-zsh folder:plugins/virtualenvwrapper
 zsh-users/zsh-autosuggestions
 
 # Local plugins
-%LOCAL%/zsh/plugins
-%LOCAL%/zsh/themes
+%LOCAL%/plugins
+%LOCAL%/themes
 
 # These should be last
 mafredri/zsh-async

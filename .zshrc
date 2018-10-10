@@ -11,8 +11,8 @@ path=(
 # My plugins
 #-----------
 source <(antibody init)
-export DOTFILES_REPO=$HOME/github/dotfiles
-cat $DOTFILES_REPO/zsh/.zsh_plugins.txt | sed 's@%LOCAL%@'"$DOTFILES_REPO"'@' | antibody bundle
+export LOCAL_ZSH=$HOME/.zsh
+cat $HOME/.zsh_plugins.txt | sed 's@%LOCAL%@'"$LOCAL_ZSH"'@' | antibody bundle
 
 #-------------------
 # Optional local zsh
