@@ -16,5 +16,5 @@ zsh-users/zsh-autosuggestions
 
 # These should be last
 mafredri/zsh-async
-zsh-users/zsh-syntax-highlighting
+zdharma/fast-syntax-highlighting
 
