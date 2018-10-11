@@ -7,6 +7,7 @@ sudo apt-get install git-extras
 sudo apt-get install neovim
 sudo apt-get install silversearcher-ag
 sudo apt-get install tmux
+sudo apt-get install zsh
 
 #-----------------
 # Package Managers
