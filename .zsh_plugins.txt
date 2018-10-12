@@ -8,9 +8,6 @@ robbyrussell/oh-my-zsh folder:plugins/mercurial
 robbyrussell/oh-my-zsh folder:plugins/virtualenvwrapper
 robbyrussell/oh-my-zsh folder:plugins/vi-mode
 
-# New fancy plugins
-zsh-users/zsh-autosuggestions
-
 # Local plugins
 %LOCAL%/plugins
 %LOCAL%/themes

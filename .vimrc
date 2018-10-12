@@ -50,8 +50,18 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Plug 'edkolev/tmuxline.vim'
 
-" LSP
+" Completions
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'wellle/tmux-complete.vim'
+
+" Linting
 Plug 'w0rp/ale'
+
+" LSP
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 
 " Language specific plugins
 Plug 'fatih/vim-go'
@@ -100,6 +110,9 @@ set undodir=~/.vim/undodir
 
 " Disable the preview window
 set completeopt-=preview
+
+" Always draw the signcolumn.
+set signcolumn=yes
 
 "====================================="
 " Source other vimrcs if we have them "
@@ -183,5 +196,13 @@ nnoremap <leader>gs :Gstatus<CR>
 " ----- mhinz/vim-signify -----
 " let g:signify_realtime = 1
 
-" ----- w0rp/ale -----
-nnoremap <C-]> :ALEGoToDefinition <CR>
+" ----- Shougo/deoplete.nvim -----
+let g:deoplete#enable_at_startup = 1
+"
+" ----- autozimu/LanguageClient-neovim -----
+nnoremap <leader>ld :call LanguageClient#textDocument_definition()<CR>
+nnoremap <leader>lr :call LanguageClient#textDocument_rename()<CR>
+nnoremap <leader>lf :call LanguageClient#textDocument_formatting()<CR>
+nnoremap <leader>lc :call LanguageClient#clearDocumentHighlight()<CR>
+nnoremap <leader>lm :call LanguageClient_contextMenu()<CR>
+
