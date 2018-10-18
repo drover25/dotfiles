@@ -114,6 +114,9 @@ set completeopt-=preview
 " Always draw the signcolumn.
 set signcolumn=yes
 
+" Relative numbers
+set relativenumber
+
 "====================================="
 " Source other vimrcs if we have them "
 "====================================="
@@ -198,7 +201,9 @@ nnoremap <leader>gs :Gstatus<CR>
 
 " ----- Shougo/deoplete.nvim -----
 let g:deoplete#enable_at_startup = 1
-"
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
 " ----- autozimu/LanguageClient-neovim -----
 nnoremap <leader>ld :call LanguageClient#textDocument_definition()<CR>
 nnoremap <leader>lr :call LanguageClient#textDocument_rename()<CR>
