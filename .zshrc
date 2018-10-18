@@ -7,12 +7,14 @@ path=(
     /bin
 )
 
-#-----------
-# My plugins
-#-----------
-source <(antibody init)
-export LOCAL_ZSH=$HOME/.zsh
-cat $HOME/.zsh_plugins.txt | sed 's@%LOCAL%@'"$LOCAL_ZSH"'@' | antibody bundle
+##-----------
+## My plugins
+##-----------
+if [ ! -f ~/.zsh_plugins.sh ]; then
+  export LOCAL_ZSH=$HOME/.zsh
+  cat ~/.zsh_plugins.txt | sed 's@%LOCAL%@'"$LOCAL_ZSH"'@' | antibody bundle > ~/.zsh_plugins.sh
+fi
+source ~/.zsh_plugins.sh
 
 #-------------------
 # Optional local zsh
