@@ -10,9 +10,11 @@ robbyrussell/oh-my-zsh folder:plugins/vi-mode
 
 # Local plugins
 %LOCAL%/plugins
-%LOCAL%/themes
 
 # These should be last
 mafredri/zsh-async
 zdharma/fast-syntax-highlighting
+
+# THEME
+%LOCAL%/themes
 
