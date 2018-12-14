@@ -42,6 +42,9 @@ Plug 'tpope/vim-obsession'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
 
+" Toggle the quickfix and loclist
+Plug 'Valloric/ListToggle'
+
 " Themes
 Plug 'arcticicestudio/nord-vim'
 
@@ -53,6 +56,8 @@ Plug 'vim-airline/vim-airline-themes'
 " Completions
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'wellle/tmux-complete.vim'
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'Shougo/echodoc.vim'
 
 " Linting
 Plug 'w0rp/ale'
@@ -62,9 +67,6 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
-
-" Language specific plugins
-Plug 'fatih/vim-go'
 
 call plug#end()
 
@@ -204,10 +206,20 @@ let g:deoplete#enable_at_startup = 1
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
+" ----- Shougo/echodoc.nvim -----
+set cmdheight=2
+let g:echodoc#enable_at_startup = 1
+let g:echodoc#type = 'signature'
+
 " ----- autozimu/LanguageClient-neovim -----
-nnoremap <leader>ld :call LanguageClient#textDocument_definition()<CR>
-nnoremap <leader>lr :call LanguageClient#textDocument_rename()<CR>
-nnoremap <leader>lf :call LanguageClient#textDocument_formatting()<CR>
-nnoremap <leader>lc :call LanguageClient#clearDocumentHighlight()<CR>
+nnoremap <leader>gd :call LanguageClient#textDocument_definition()<CR>
 nnoremap <leader>lm :call LanguageClient_contextMenu()<CR>
 
+" ----- Valloric/ListToggle -----
+" Also some shortcuts for easier navigation.
+let g:lt_location_list_toggle_map = '<leader>l'
+nnoremap <leader>ln :lnext<CR>
+nnoremap <leader>lp :lprev<CR>
+let g:lt_quickfix_list_toggle_map = '<leader>q'
+nnoremap <leader>qn :cnext<CR>
+nnoremap <leader>qp :cprev<CR>
