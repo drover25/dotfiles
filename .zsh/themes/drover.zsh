@@ -14,7 +14,7 @@ function last_arrow() {
 }
 
 function current_dir() {
-  echo -n '%K{blue}%F{black}%B%~ %f%k%b%K{black}%F{blue}%f%k%b'
+  echo -n "%K{blue}%F{black}%B$(shrink_path -l -T) %f%k%b%K{black}%F{blue}%f%k%b"
 }
 
 function prompt() {

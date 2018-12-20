@@ -5,8 +5,9 @@ robbyrussell/oh-my-zsh folder:plugins/common-aliases
 robbyrussell/oh-my-zsh folder:plugins/git
 robbyrussell/oh-my-zsh folder:plugins/git-extras
 robbyrussell/oh-my-zsh folder:plugins/mercurial
-robbyrussell/oh-my-zsh folder:plugins/virtualenvwrapper
+robbyrussell/oh-my-zsh folder:plugins/shrink-path
 robbyrussell/oh-my-zsh folder:plugins/vi-mode
+robbyrussell/oh-my-zsh folder:plugins/virtualenvwrapper
 
 # Local plugins
 %LOCAL%/plugins
