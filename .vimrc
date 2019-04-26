@@ -53,20 +53,11 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Plug 'edkolev/tmuxline.vim'
 
-" Completions
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'wellle/tmux-complete.vim'
-Plug 'zchee/deoplete-go', { 'do': 'make'}
-Plug 'Shougo/echodoc.vim'
-
 " Linting
 Plug 'w0rp/ale'
 
 " LSP
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 
 call plug#end()
 
@@ -86,7 +77,6 @@ set t_ZR=^[[23m
 " Setup theme
 set termguicolors
 set background=dark
-let g:nord_comment_brightness = 20
 let g:nord_italic = 1
 let g:nord_underline = 1
 let g:nord_italic_comments = 1
@@ -200,20 +190,6 @@ nnoremap <leader>gs :Gstatus<CR>
 
 " ----- mhinz/vim-signify -----
 " let g:signify_realtime = 1
-
-" ----- Shougo/deoplete.nvim -----
-let g:deoplete#enable_at_startup = 1
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-
-" ----- Shougo/echodoc.nvim -----
-set cmdheight=2
-let g:echodoc#enable_at_startup = 1
-let g:echodoc#type = 'signature'
-
-" ----- autozimu/LanguageClient-neovim -----
-nnoremap <leader>gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <leader>lm :call LanguageClient_contextMenu()<CR>
 
 " ----- Valloric/ListToggle -----
 " Also some shortcuts for easier navigation.
