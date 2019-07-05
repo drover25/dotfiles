@@ -1,6 +1,6 @@
 # Custom fzf path
 # ---------------
-fzf_path=$HOME/.fzf
+fzf_path=/usr/local/opt/fzf
 
 # Use Ag
 # ---------
