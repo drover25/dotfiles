@@ -9,3 +9,6 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 # TMUX Package Manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+# Node manager
+curl -L https://git.io/n-install | bash
+
