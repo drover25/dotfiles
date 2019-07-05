@@ -22,7 +22,7 @@ Plug 'tpope/vim-surround'
 Plug 'wellle/targets.vim'
 
 " Navigation
-Plug '~/.fzf'
+Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
 " source control plugins
