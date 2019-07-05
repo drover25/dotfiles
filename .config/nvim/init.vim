@@ -1,1 +1,1 @@
-/usr/local/google/home/drover/.vimrc
+/Users/drover/.vimrc
