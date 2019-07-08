@@ -23,18 +23,6 @@ _fzf_compgen_dir() {
   ag -g $1 --hidden) | sed -e 's:/[^/]*$::' | uniq
 }
 
-# Setup fzf
-# ---------
-if [[ ! "$PATH" == *$fzf_path/bin* ]]; then
-  export PATH="$PATH:$fzf_path/bin"
-fi
-
-# Man path
-# --------
-if [[ ! "$MANPATH" == *$fzf_path/man* && -d "$fzf_path/man" ]]; then
-  export MANPATH="$MANPATH:$fzf_path/man"
-fi
-
 # Auto-completion
 # ---------------
 [[ $- == *i* ]] && source "$fzf_path/shell/completion.zsh" 2> /dev/null
