@@ -4,23 +4,16 @@ fzf_path=/usr/local/opt/fzf
 
 # Use Ag
 # ---------
-export FZF_DEFAULT_COMMAND='(
-  hg files ||
-  git ls-tree -r --name-only HEAD ||
-  ag -g "" --hidden) 2> /dev/null'
+export FZF_DEFAULT_COMMAND='(rg --files --hidden) 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_TMUX=1
 
 _fzf_compgen_path() {
-  hg files ||
-  git ls-tree -r --name-only HEAD ||
-  ag -g $1 --hidden
+  fd --hidden --follow --exclude ".git" . "$1"
 }
 
 _fzf_compgen_dir() {
-  (hg files ||
-  git ls-tree -r --name-only HEAD ||
-  ag -g $1 --hidden) | sed -e 's:/[^/]*$::' | uniq
+  fd --type d --hidden --follow --exclude ".git" . "$1"
 }
 
 # Auto-completion

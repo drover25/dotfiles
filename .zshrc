@@ -11,13 +11,11 @@ export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
 zplug "plugins/colored-man-pages", from:oh-my-zsh
-zplug "plugins/common-aliases", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/git-extras", from:oh-my-zsh
 zplug "plugins/vi-mode", from:oh-my-zsh
 
-zplug "felixr/docker-zsh-completion"
 zplug "zsh-users/zsh-completions"
+zplug "iam4x/zsh-iterm-touchbar"
 zplug "zdharma/fast-syntax-highlighting", defer:2
 
 zplug "~/.zsh/plugins", from:local, defer:1
