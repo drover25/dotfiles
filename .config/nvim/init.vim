@@ -20,6 +20,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'Valloric/ListToggle' " Toggle the quickfix and loclist
 Plug 'arcticicestudio/nord-vim' " Theme
 Plug 'vim-airline/vim-airline' " Statusbar plugins
+Plug 'editorconfig/editorconfig-vim' " Default formatting
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}} " LSP
 call plug#end()
 
