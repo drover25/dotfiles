@@ -15,7 +15,6 @@ Plug 'tpope/vim-commentary' " Comment all the things
 Plug 'tpope/vim-obsession' " Save vim sessions. Works nice with TMUX
 Plug 'tmux-plugins/vim-tmux-focus-events' " TMUX integration
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'Valloric/ListToggle' " Toggle the quickfix and loclist
 Plug 'arcticicestudio/nord-vim' " Theme
 Plug 'rakr/vim-one' " Theme
 Plug 'vim-airline/vim-airline' " Statusbar plugins
