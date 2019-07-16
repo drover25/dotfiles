@@ -1,5 +1,5 @@
-nmap <silent> <c-p> :Files<CR>
-nmap <silent> <c-s> :Buffers<CR>
+" nmap <silent> <c-p> :Files<CR>
+" nmap <silent> <c-s> :Buffers<CR>
 
 " Mapping selecting mappings
 nmap <leader><tab> <plug>(fzf-maps-n)

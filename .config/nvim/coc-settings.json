@@ -1,4 +1,14 @@
 {
 	"coc.preferences.formatOnSaveFiletypes": ["css", "javascript", "html", "json", "yaml"],
-	"eslint.autoFixOnSave": true
+	"eslint.autoFixOnSave": true,
+	"smartf.timeout": 1500,
+	"list.normalMappings": {
+	  "v": "action:vsplit",
+	  "s": "action:split"
+	},
+	"list.insertMappings": {
+	  "<C-v>": "action:vsplit",
+	  "<C-s>": "action:split"
+	},
+	"list.source.files.args": ["--files", "--hidden"]
 }
