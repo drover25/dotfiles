@@ -33,3 +33,5 @@ mas '1Password', id: 1333542190
 mas 'Spark', id: 1176895641
 mas 'Magnet', id: 441258766
 
+brew 'terraform'
+brew 'terragrunt'
