@@ -11,3 +11,9 @@ augroup Smartf
   autocmd User SmartfEnter :hi Conceal ctermfg=220 guifg=#6638F0
   autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#504945
 augroup end
+
+" navigate chunks of current buffer
+nmap [g <Plug>(coc-git-prevchunk)
+nmap ]g <Plug>(coc-git-nextchunk)
+" show chunk diff at current position
+nmap gs <Plug>(coc-git-chunkinfo)
