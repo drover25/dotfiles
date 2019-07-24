@@ -8,12 +8,14 @@ brew "fasd"
 brew "fd"
 brew "fzf"
 brew "git"
+brew "git-extras"
 brew "htop"
 brew "hub"
 brew "mas"
 brew "neovim", args: ["HEAD"]
 brew "ripgrep"
 brew "tmux"
+brew "tree"
 brew "watch"
 brew "zsh"
 brew "zplug"
@@ -28,10 +30,12 @@ cask "iterm2"
 cask "notion"
 cask "station"
 cask "visual-studio-code"
+cask "yt-music"
 
-mas '1Password', id: 1333542190
-mas 'Spark', id: 1176895641
-mas 'Magnet', id: 441258766
+mas "1Password", id: 1333542190
+mas "Spark", id: 1176895641
+mas "Magnet", id: 441258766
 
-brew 'terraform'
-brew 'terragrunt'
+brew "terraform"
+brew "terragrunt"
+cask "aws-vault"
