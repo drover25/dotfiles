@@ -1,7 +1,6 @@
 {
-	"coc.preferences.formatOnSaveFiletypes": ["css", "javascript", "html", "json", "yaml"],
+	"coc.preferences.formatOnSaveFiletypes": ["css", "javascript", "html", "json", "yaml", "terraform", "hcl"],
 	"eslint.autoFixOnSave": true,
-	"smartf.timeout": 1500,
 	"list.normalMappings": {
 	  "v": "action:vsplit",
 	  "s": "action:split"
@@ -10,5 +9,6 @@
 	  "<C-v>": "action:vsplit",
 	  "<C-s>": "action:split"
 	},
-	"list.source.files.args": ["--files", "--hidden"]
+	"list.source.files.args": ["--files", "--hidden"],
+  "tsserver.reportStyleChecksAsWarnings": false
 }
