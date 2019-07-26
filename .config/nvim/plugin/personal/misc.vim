@@ -1,3 +1,6 @@
+" Set mouse mode
+set mouse=a
+
 " Setup an undodir for persistant undo state.
 " Use persistent history.
 if !isdirectory("/tmp/.vim-undo-dir")
