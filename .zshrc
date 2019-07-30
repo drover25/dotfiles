@@ -21,9 +21,8 @@ zplug "blimmer/zsh-aws-vault"
 zplug "zdharma/fast-syntax-highlighting", defer:2
 
 zplug "~/.config/zsh/plugins", from:local, defer:1
-zplug "~/.config/zsh/themes", from:local, defer:1
 
-zplug "romkatv/powerlevel10k", use:powerlevel10k.zsh-theme
+zplug "romkatv/powerlevel10k", use:"{powerlevel10k.zsh-theme,config/p10k-lean.zsh}"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
