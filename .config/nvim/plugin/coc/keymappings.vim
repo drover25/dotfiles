@@ -2,6 +2,10 @@ nmap <silent> <c-p> :CocList files<CR>
 nmap <silent> <c-s> :CocList buffers<CR>
 nmap <silent> <c-c> :CocList<CR>
 
+" Navigate CocList
+nmap <silent> [c :CocNext<CR>
+nmap <silent> ]c :CocPrev<CR>
+
 " navigate chunks of current buffer
 nmap [g <Plug>(coc-git-prevchunk)
 nmap ]g <Plug>(coc-git-nextchunk)

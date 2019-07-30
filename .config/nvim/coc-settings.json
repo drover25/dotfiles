@@ -3,12 +3,14 @@
 	"eslint.autoFixOnSave": true,
 	"list.normalMappings": {
 	  "v": "action:vsplit",
-	  "s": "action:split"
-	},
-	"list.insertMappings": {
-	  "<C-v>": "action:vsplit",
-	  "<C-s>": "action:split"
-	},
-	"list.source.files.args": ["--files", "--hidden"],
+	  "s": "action:split",
+    "<C-c>": "command:wincmd q"
+  },
+  "list.insertMappings": {
+    "<C-v>": "action:vsplit",
+    "<C-s>": "action:split",
+    "<C-c>": "command:wincmd q"
+  },
+  "list.source.files.args": ["--files", "--hidden"],
   "tsserver.reportStyleChecksAsWarnings": false
 }
