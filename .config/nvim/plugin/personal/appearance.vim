@@ -1,13 +1,10 @@
 " Setup dark theme
 set termguicolors
 set background=dark
-let g:nord_italic = 1
-let g:nord_underline = 1
-let g:nord_italic_comments = 1
-colorscheme nord
+let g:one_allow_italics = 1
+colorscheme one
 
 " And light theme
-let g:one_allow_italics = 1
 
 syntax on " Enable syntax highlighting
 set t_ZH=^[[3m " Enable italics
