@@ -1,5 +1,6 @@
 
-alias la='ls -lAFh'   #long list,show almost all,show type,human readable
+alias la='colorls -la'
+alias tree='colorls --git-status --tree'
 
 alias grep='grep --color'
 
