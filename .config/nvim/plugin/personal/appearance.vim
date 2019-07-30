@@ -1,6 +1,7 @@
 " Setup dark theme
 set termguicolors
 colorscheme one
+let g:one_allow_italics=1
 let iterm_profile = $ITERM_PROFILE
 if iterm_profile == "light"
     set background=light
@@ -8,11 +9,10 @@ else
     set background=dark
 endif
 
-" And light theme
-
 syntax on " Enable syntax highlighting
 set t_ZH=^[[3m " Enable italics
 set t_ZR=^[[23m
+highlight Comment cterm=italic
 set hls " Highlight search results
 set cursorline " Highlight current line
 set list listchars=tab:»\ ,trail:° " use » to mark Tabs and ° to mark trailing whitespace
