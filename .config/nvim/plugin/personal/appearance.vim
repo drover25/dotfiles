@@ -1,8 +1,12 @@
 " Setup dark theme
 set termguicolors
-set background=dark
-let g:one_allow_italics = 1
 colorscheme one
+let iterm_profile = $ITERM_PROFILE
+if iterm_profile == "light"
+    set background=light
+else
+    set background=dark
+endif
 
 " And light theme
 
@@ -18,4 +22,3 @@ set relativenumber " Relative numbers
 if has('nvim')
   au TermOpen * setlocal nonumber norelativenumber signcolumn=no " Disable linenumbers in term
 endif
-
