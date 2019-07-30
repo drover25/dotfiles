@@ -19,7 +19,8 @@ Plug 'arcticicestudio/nord-vim' " Theme
 Plug 'rakr/vim-one' " Theme
 Plug 'vim-airline/vim-airline' " Statusbar plugins
 Plug 'editorconfig/editorconfig-vim' " Default formatting
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}} " LSP
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}} " A lot of things...
+Plug 'honza/vim-snippets' " Some snippets
 call plug#end()
 
 filetype plugin indent on
