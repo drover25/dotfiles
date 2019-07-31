@@ -12,5 +12,7 @@
     "<C-c>": "command:wincmd q"
   },
   "list.source.files.args": ["--files", "--hidden"],
-  "tsserver.reportStyleChecksAsWarnings": false
+  "tsserver.reportStyleChecksAsWarnings": false,
+  "diagnostic.virtualTextPrefix": ">> ",
+  "diagnostic.virtualText": true
 }
