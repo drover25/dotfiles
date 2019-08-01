@@ -22,7 +22,7 @@ zplug "zdharma/fast-syntax-highlighting", defer:2
 
 zplug "~/.config/zsh/plugins", from:local, defer:1
 
-zplug "romkatv/powerlevel10k", use:"{powerlevel10k.zsh-theme,config/p10k-lean.zsh}"
+zplug "romkatv/powerlevel10k", use:"powerlevel10k.zsh-theme"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -34,3 +34,6 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+source ~/.p10k.zsh
