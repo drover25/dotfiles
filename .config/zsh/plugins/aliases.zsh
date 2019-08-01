@@ -1,5 +1,14 @@
 
-alias la='colorls -la'
+themels() {
+  if [ "$ITERM_PROFILE" = 'light' ]; then
+    colorls --light $1
+  else
+    colorls $1
+  fi
+}
+alias colorls=themels
+alias ls='colorls'
+alias la='colorls -lA'
 alias tree='colorls --git-status --tree'
 
 alias grep='grep --color'
