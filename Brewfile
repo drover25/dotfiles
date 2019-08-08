@@ -30,8 +30,8 @@ cask "google-chrome"
 cask "iterm2"
 cask "notion"
 cask "station"
+cask "spotify"
 cask "visual-studio-code"
-cask "yt-music"
 
 mas "1Password", id: 1333542190
 mas "Spark", id: 1176895641
