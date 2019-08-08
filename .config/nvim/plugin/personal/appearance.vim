@@ -1,13 +1,4 @@
-" Setup dark theme
 set termguicolors
-colorscheme one
-let g:one_allow_italics=1
-let iterm_profile = $ITERM_PROFILE
-if iterm_profile == "light"
-    set background=light
-else
-    set background=dark
-endif
 
 syntax on " Enable syntax highlighting
 set t_ZH=^[[3m " Enable italics
@@ -22,3 +13,20 @@ set relativenumber " Relative numbers
 if has('nvim')
   au TermOpen * setlocal nonumber norelativenumber signcolumn=no " Disable linenumbers in term
 endif
+
+let iterm_profile = $ITERM_PROFILE
+if iterm_profile == "nord"
+    set background=dark
+    let g:nord_italic=1
+    let g:nord_italic_comments=1
+    colorscheme nord
+elseif iterm_profile == "light"
+    set background=light
+    let g:one_allow_italics=1
+    colorscheme one
+else
+    set background=dark
+    let g:one_allow_italics=1
+    colorscheme one
+endif
+

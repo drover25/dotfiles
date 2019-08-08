@@ -18,6 +18,7 @@ Plug 'tmux-plugins/vim-tmux-focus-events' " TMUX integration
 Plug 'tpope/vim-commentary' " Comment all the things
 Plug 'tpope/vim-fugitive' " source control plugins
 Plug 'tpope/vim-obsession' " Save vim sessions. Works nice with TMUX
+Plug 'arcticicestudio/nord-vim' " Theme
 Plug 'tpope/vim-repeat' " Allow plugins to harness .
 Plug 'tpope/vim-sensible' " Sensible defaults
 Plug 'tpope/vim-surround' " Surround action for text objects
