@@ -1,9 +1,10 @@
 
 themels() {
-  if [ "$ITERM_PROFILE" = 'light' ]; then
-    colorls --light $1
+  if [[  $ITERM_PROFILE =~ 'light' ]]
+  then
+    colorls --light $@
   else
-    colorls $1
+    colorls $@
   fi
 }
 alias colorls=themels
