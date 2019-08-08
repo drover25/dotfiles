@@ -21,6 +21,7 @@ zplug "blimmer/zsh-aws-vault"
 zplug "zdharma/fast-syntax-highlighting", defer:2
 
 zplug "~/.config/zsh/plugins", from:local, defer:1
+zplug "~/.config/zsh/theme", from:local, defer:1
 
 zplug "romkatv/powerlevel10k", use:"powerlevel10k.zsh-theme"
 
@@ -34,6 +35,3 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-source ~/.p10k.zsh
