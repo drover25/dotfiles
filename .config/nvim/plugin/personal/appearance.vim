@@ -15,7 +15,15 @@ if has('nvim')
 endif
 
 let iterm_profile = $ITERM_PROFILE
-if iterm_profile == "nord"
+if iterm_profile == "gruvbox-dark"
+    set background=dark
+    let g:gruvbox_italic=1
+    colorscheme gruvbox
+elseif iterm_profile == "gruvbox-light"
+    set background=light
+    let g:gruvbox_italic=1
+    colorscheme gruvbox
+elseif iterm_profile == "nord"
     set background=dark
     let g:nord_italic=1
     let g:nord_italic_comments=1
