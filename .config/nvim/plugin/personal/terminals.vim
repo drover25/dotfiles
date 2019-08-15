@@ -1,2 +1,2 @@
-command! -nargs=* T split | terminal <args>
-command! -nargs=* VT vsplit | terminal <args>
+command! -nargs=* T below split | terminal <args>
+command! -nargs=* VT below vsplit | terminal <args>
