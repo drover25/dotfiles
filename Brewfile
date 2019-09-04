@@ -4,6 +4,7 @@ tap "telemachus/brew", "https://telemachus@bitbucket.org/telemachus/brew.git", p
 tap "caskroom/fonts"
 
 brew "awscli"
+brew "diff-so-fancy"
 brew "fasd"
 brew "fd"
 brew "fzf"
