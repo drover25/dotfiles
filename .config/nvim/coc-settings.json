@@ -1,5 +1,5 @@
 {
-	"coc.preferences.formatOnSaveFiletypes": ["css", "javascript", "html", "json", "yaml", "terraform", "hcl"],
+	"coc.preferences.formatOnSaveFiletypes": ["css", "javascript", "html", "json", "yaml", "terraform", "hcl", "typescript"],
 	"eslint.autoFixOnSave": true,
 	"list.normalMappings": {
 	  "v": "action:vsplit",
@@ -13,6 +13,5 @@
   },
   "list.source.files.args": ["--files", "--hidden"],
   "tsserver.reportStyleChecksAsWarnings": false,
-  "diagnostic.virtualTextPrefix": ">> ",
-  "diagnostic.virtualText": true
+  "diagnostic.checkCurrentLine": true
 }
