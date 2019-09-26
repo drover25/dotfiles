@@ -61,7 +61,7 @@ fi
       # rust_version          # rustc version (https://www.rust-lang.org)
       # rbenv                   # ruby version from rbenv (https://github.com/rbenv/rbenv)
       # rvm                     # ruby version from rvm (https://rvm.io)
-      # kubecontext             # current kubernetes context (https://kubernetes.io/)
+      kubecontext             # current kubernetes context (https://kubernetes.io/)
       terraform               # terraform workspace (https://www.terraform.io)
       # context                 # user@host
       # nordvpn                 # nordvpn connection status, linux only (https://nordvpn.com/)
