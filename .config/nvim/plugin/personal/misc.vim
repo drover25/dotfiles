@@ -1,6 +1,12 @@
 " Set mouse mode
 set mouse=a
 
+" Faster diagnostic
+set updatetime=300
+
+" Don't give |ins-completion-menu| messages
+set shortmess+=c
+
 " Setup an undodir for persistant undo state.
 " Use persistent history.
 if !isdirectory("/tmp/.vim-undo-dir")

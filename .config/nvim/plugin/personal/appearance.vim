@@ -10,6 +10,7 @@ set list listchars=tab:»\ ,trail:° " use » to mark Tabs and ° to mark traili
 set completeopt-=preview " Disable the preview window
 set signcolumn=yes " Always draw the signcolumn.
 set relativenumber " Relative numbers
+set cmdheight=2 " Better display for messages
 if has('nvim')
   au TermOpen * setlocal nonumber norelativenumber signcolumn=no " Disable linenumbers in term
 endif
