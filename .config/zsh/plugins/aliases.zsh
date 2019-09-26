@@ -1,16 +1,8 @@
+alias cat='bat'
 
-themels() {
-  if [[  $ITERM_PROFILE =~ 'light' ]]
-  then
-    colorls --light $@
-  else
-    colorls $@
-  fi
-}
-alias colorls=themels
-alias ls='colorls'
-alias la='colorls -lA'
-alias tree='colorls --git-status --tree'
+alias ls='exa'
+alias la='exa -la --git'
+alias tree='exa --tree --git'
 
 alias grep='grep --color'
 
