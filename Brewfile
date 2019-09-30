@@ -24,16 +24,15 @@ brew "zsh"
 brew "zplug"
 
 cask "alfred"
-cask "dash"
 cask "docker"
 cask "caskroom/fonts/font-firacode-nerd-font"
 cask "caskroom/fonts/font-victor-mono"
 cask "google-chrome"
 cask "iterm2"
+cask "kindle"
 cask "notion"
 cask "station"
 cask "spotify"
-cask "visual-studio-code"
 
 mas "1Password", id: 1333542190
 mas "Spark", id: 1176895641
