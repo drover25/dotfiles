@@ -11,6 +11,7 @@ alias -g T='| tail'
 alias -g G='| grep'
 alias -g L="| less"
 alias -g M="| most"
+alias -g C="| cat"
 
 alias rm='rm -i'
 alias cp='cp -i'
