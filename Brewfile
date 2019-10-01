@@ -40,3 +40,4 @@ mas "Magnet", id: 441258766
 
 brew "terraform"
 brew "terragrunt"
+cask "miro-formerly-realtimeboard"
