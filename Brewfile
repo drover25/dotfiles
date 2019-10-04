@@ -3,9 +3,9 @@ tap "homebrew/cask"
 tap "telemachus/brew", "https://telemachus@bitbucket.org/telemachus/brew.git", pin: true
 tap "caskroom/fonts"
 
-brew "awscli"
 brew "bat"
 brew "diff-so-fancy"
+brew "dust"
 brew "exa"
 brew "fasd"
 brew "fd"
@@ -20,6 +20,7 @@ brew "ripgrep"
 brew "tig"
 brew "tmux"
 brew "watch"
+brew "wget"
 brew "zsh"
 brew "zplug"
 
@@ -38,6 +39,9 @@ mas "1Password", id: 1333542190
 mas "Spark", id: 1176895641
 mas "Magnet", id: 441258766
 
+brew "awscli"
 brew "terraform"
 brew "terragrunt"
+cask "google-cloud-sdk"
 cask "miro-formerly-realtimeboard"
+cask "vagrant"
