@@ -41,6 +41,7 @@ mas "Spark", id: 1176895641
 mas "Magnet", id: 441258766
 
 brew "awscli"
+brew "fluxctl"
 brew "terraform"
 brew "terragrunt"
 cask "google-cloud-sdk"
