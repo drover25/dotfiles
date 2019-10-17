@@ -9,6 +9,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'editorconfig/editorconfig-vim' " Default formatting
 Plug 'edkolev/tmuxline.vim' " Tmuxline config
 Plug 'honza/vim-snippets' " Some snippets
+Plug 'lifepillar/vim-solarized8' " Theme
 Plug 'morhetz/gruvbox' " Theme
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}} " A lot of things...
 Plug 'qpkorr/vim-bufkill' " Kill buffers w/o killing the split
@@ -24,6 +25,7 @@ Plug 'tpope/vim-repeat' " Allow plugins to harness .
 Plug 'tpope/vim-sensible' " Sensible defaults
 Plug 'tpope/vim-surround' " Surround action for text objects
 Plug 'vim-airline/vim-airline' " Statusbar plugins
+Plug 'vim-airline/vim-airline-themes' " Statusbar plugins
 Plug 'wellle/targets.vim' " Add some more text objects
 Plug 'Xuyuanp/nerdtree-git-plugin' " Add git status to NerdTree
 call plug#end()
