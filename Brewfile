@@ -1,7 +1,7 @@
 cask_args appdir: "/Applications"
 tap "homebrew/cask"
-tap "telemachus/brew", "https://telemachus@bitbucket.org/telemachus/brew.git", pin: true
-tap "caskroom/fonts"
+tap "homebrew/cask-fonts"
+tap "derailed/k9s"
 
 brew "bat"
 brew "diff-so-fancy"
@@ -27,8 +27,8 @@ brew "zplug"
 
 cask "alfred"
 cask "docker"
-cask "caskroom/fonts/font-firacode-nerd-font"
-cask "caskroom/fonts/font-victor-mono"
+cask "font-firacode-nerd-font"
+cask "font-victor-mono"
 cask "google-chrome"
 cask "iterm2"
 cask "kindle"
@@ -42,6 +42,7 @@ mas "Magnet", id: 441258766
 
 brew "awscli"
 brew "fluxctl"
+brew "k9s"
 brew "terraform"
 brew "terragrunt"
 cask "google-cloud-sdk"
