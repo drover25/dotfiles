@@ -1,3 +1,4 @@
 [alias]
 	graph = log --decorate --graph
 	prune-branches = !git remote prune origin && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
+	prune-mrs = !git branch -vv | grep 'mr/' | awk '{print $1}' | xargs git branch -D
