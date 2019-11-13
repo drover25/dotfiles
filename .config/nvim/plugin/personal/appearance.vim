@@ -34,8 +34,10 @@ elseif iterm_profile == "gruvbox-light"
     colorscheme gruvbox
 elseif iterm_profile == "nord"
     set background=dark
+    let g:nord_underline=1
     let g:nord_italic=1
     let g:nord_italic_comments=1
+    let g:nord_uniform_diff_background=1
     colorscheme nord
 elseif iterm_profile == "light"
     set background=light
