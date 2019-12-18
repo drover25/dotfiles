@@ -1,4 +1,11 @@
-alias cat='bat'
+bat-theme() {
+  if [[ $ITERM_PROFILE =~ 'light' ]]
+  then echo --theme=OneHalfLight
+  else echo --theme=OneHalfDark
+  fi
+}
+
+alias cat='bat $(bat-theme)'
 
 alias ls='exa'
 alias la='exa -la --git'
