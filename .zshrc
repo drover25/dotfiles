@@ -29,7 +29,6 @@ zplug "blimmer/zsh-aws-vault"
 zplug "zdharma/fast-syntax-highlighting", defer:2
 
 zplug "~/.config/zsh/plugins", from:local, defer:1
-zplug "~/.config/zsh/theme", from:local, defer:1
 
 zplug "romkatv/powerlevel10k", use:"powerlevel10k.zsh-theme"
 
