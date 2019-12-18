@@ -9,7 +9,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'editorconfig/editorconfig-vim' " Default formatting
 Plug 'edkolev/tmuxline.vim' " Tmuxline config
 Plug 'honza/vim-snippets' " Some snippets
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'lifepillar/vim-solarized8' " Theme
 Plug 'morhetz/gruvbox' " Theme
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " A lot of things...

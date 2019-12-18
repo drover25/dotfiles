@@ -18,3 +18,4 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
+let g:coc_node_path = '/Users/drover/n/n/versions/node/13.3.0/bin/node'

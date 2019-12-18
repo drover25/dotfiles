@@ -23,4 +23,3 @@ _fzf_compgen_dir() {
 # Key bindings
 # ------------
 source "$fzf_path/shell/key-bindings.zsh"
-
