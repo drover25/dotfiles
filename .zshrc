@@ -44,5 +44,19 @@ fi
 # Then, source plugins and add commands to $PATH
 zplug load
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+# # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
+function switch-p10k-config() {
+  emulate -L zsh
+  case $ITERM_PROFILE in
+    dark) local cfg=~/.config/zsh/theme/p10k-dark.zsh;;
+    gruvbox-dark) local cfg=~/.config/zsh/theme/p10k-dark.zsh;;
+    *)        local cfg=~/.config/zsh/theme/p10k-rainbow.zsh;;
+  esac
+  [[ $cfg == $current_p10k_config ]] || source $cfg
+  typeset -g current_p10k_config=$cfg
+}
+
+switch-p10k-config
+precmd_functions+=(switch-p10k-config)
