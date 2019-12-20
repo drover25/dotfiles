@@ -12,6 +12,7 @@ Plug 'honza/vim-snippets' " Some snippets
 Plug '/usr/local/opt/fzf' " Fuzzy completion
 Plug 'junegunn/fzf.vim' " Fuzzy completion
 Plug 'lifepillar/vim-solarized8' " Theme
+Plug 'liuchengxu/vista.vim' " View structure of file
 Plug 'morhetz/gruvbox' " Theme
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " A lot of things...
 Plug 'qpkorr/vim-bufkill' " Kill buffers w/o killing the split
