@@ -1,5 +1,3 @@
-nmap <silent> <c-p> :CocList files<CR>
-nmap <silent> <c-s> :CocList buffers<CR>
 nmap <silent> <c-c> :CocList<CR>
 
 nmap <silent> gd <Plug>(coc-definition)
