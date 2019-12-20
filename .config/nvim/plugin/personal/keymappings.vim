@@ -8,6 +8,9 @@ nnoremap <leader>wq :wq<CR>
 inoremap jk <Esc>
 vnoremap jk <Esc>
 
+" 'Zoom'. Open current buffer in a new tab.
+nnoremap <c-w>z :tabnew %<CR>
+
 " Toggle paste mode
 set pastetoggle=<F2>
 
