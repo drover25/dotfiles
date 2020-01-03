@@ -1,15 +1,18 @@
 set nocompatible
 set hidden
 
+runtime! before/**/*.vim
+
 filetype off
 
 call plug#begin('~/.local/share/nvim/plugged')
+Plug '/usr/local/opt/fzf' " Fuzzy completion
+Plug 'Xuyuanp/nerdtree-git-plugin' " Add git status to NerdTree
 Plug 'arcticicestudio/nord-vim' " Theme
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'editorconfig/editorconfig-vim' " Default formatting
 Plug 'edkolev/tmuxline.vim' " Tmuxline config
 Plug 'honza/vim-snippets' " Some snippets
-Plug '/usr/local/opt/fzf' " Fuzzy completion
 Plug 'junegunn/fzf.vim' " Fuzzy completion
 Plug 'lifepillar/vim-solarized8' " Theme
 Plug 'liuchengxu/vista.vim' " View structure of file
@@ -33,8 +36,8 @@ Plug 'tpope/vim-surround' " Surround action for text objects
 Plug 'tpope/vim-unimpaired' " Pairs of handy bracket mappings
 Plug 'vim-airline/vim-airline' " Statusbar plugins
 Plug 'vim-airline/vim-airline-themes' " Statusbar plugins
+Plug 'voldikss/vim-floaterm' " Floating terminal!
 Plug 'wellle/targets.vim' " Add some more text objects
-Plug 'Xuyuanp/nerdtree-git-plugin' " Add git status to NerdTree
 call plug#end()
 
 filetype plugin indent on
