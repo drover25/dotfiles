@@ -13,12 +13,12 @@ alias tree='exa --tree --git'
 
 alias grep='grep --color'
 
-alias -g H='| head'
-alias -g T='| tail'
+alias -g C="| cat"
 alias -g G='| grep'
+alias -g H='| head'
 alias -g L="| less"
 alias -g M="| most"
-alias -g C="| cat"
+alias -g T='| tail'
 alias -g Y="| cat -l yaml"
 
 alias rm='rm -i'
