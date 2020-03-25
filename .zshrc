@@ -12,6 +12,7 @@ path=(
     /usr/bin
     /sbin
     /bin
+    $path
 )
 
 export ZPLUG_HOME=/usr/local/opt/zplug

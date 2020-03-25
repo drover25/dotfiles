@@ -37,7 +37,7 @@
   # The list of segments shown on the left. Fill it with the most important segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
       # =========================[ Line #1 ]=========================
-      os_icon                 # os identifier
+      # os_icon               # os identifier
       dir                     # current directory
       vcs                     # git status
       # =========================[ Line #2 ]=========================
@@ -84,7 +84,7 @@
       # vpn_ip                # virtual private network indicator
       # ram                   # free RAM
       # load                  # CPU load
-      time                    # current time
+      # time                  # current time
       # =========================[ Line #2 ]=========================
       newline
       # public_ip             # public IP address
@@ -332,7 +332,14 @@
   #   typeset -g POWERLEVEL9K_DIR_WORK_ANCHOR_FOREGROUND=255
   #
   # typeset -g POWERLEVEL9K_DIR_CLASSES=()
-
+  typeset -g POWERLEVEL9K_DIR_CLASSES=(
+      '~rally(|/*)'          RALLY     '%BR%b'
+      '~/github(|/*)'        GITHUB    ' '
+      '~/gitlab(|/*)'        GITLAB    ' '
+      '~/.config/nvim(|/*)'  NEOVIM    ' '
+      '~/.config/zsh(|/*)'   ZSH       ' '
+      '~(|/*)'               HOME      ' '
+      '*'                    DEFAULT   '')
   #####################################[ vcs: git status ]######################################
   # Version control system colors.
   # typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND=2

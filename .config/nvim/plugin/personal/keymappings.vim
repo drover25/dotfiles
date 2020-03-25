@@ -15,9 +15,6 @@ nnoremap <c-w>z :tabnew %<CR>
 set pastetoggle=<F2>
 
 if has('nvim')
-  " Get back to normal quickly
-  tnoremap jk <C-\><C-n>
-
   " Move from the neovim terminal window to somewhere else
   tnoremap <C-h> <C-\><C-n><C-w>h
   tnoremap <C-j> <C-\><C-n><C-w>j

@@ -3,7 +3,6 @@ let g:coc_global_extensions = [
 	\"coc-emoji",
 	\"coc-eslint",
 	\"coc-git",
-	\"coc-highlight",
 	\"coc-html",
 	\"coc-json",
 	\"coc-lists",
