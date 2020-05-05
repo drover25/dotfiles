@@ -44,6 +44,7 @@ cask "google-chrome"
 cask "iterm2"
 cask "kindle"
 cask "notion"
+cask "slack"
 cask "station"
 cask "spotify"
 
@@ -52,6 +53,7 @@ mas "Spark", id: 1176895641
 mas "Magnet", id: 441258766
 
 brew "awscli"
+brew "aws-elasticbeanstalk"
 brew "fluxctl"
 brew "k9s"
 brew "kubernetes-helm"
@@ -65,4 +67,4 @@ brew "aws-iam-authenticator"
 brew "aws-google-auth"
 cask "google-cloud-sdk"
 cask "miro-formerly-realtimeboard"
-cask "parallels"
+cask "postman"

@@ -1,8 +1,21 @@
 bat-theme() {
-  if [[ $ITERM_PROFILE =~ 'light' ]]
-  then echo --theme=OneHalfLight
-  else echo --theme=OneHalfDark
-  fi
+case $ITERM_PROFILE in
+  nord)
+    echo --theme=Nord
+    ;;
+  solarized-dark)
+    echo --theme="Solarized \(dark\)"
+    ;;
+  solarized-light)
+    echo --theme="Solarized \(light\)"
+    ;;
+  *)
+    if [[ $ITERM_PROFILE =~ 'light' ]]
+    then echo --theme=OneHalfLight
+    else echo --theme=OneHalfDark
+    fi
+    ;;
+esac
 }
 
 alias cat='bat $(bat-theme)'
