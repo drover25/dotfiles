@@ -29,7 +29,7 @@ zplug "iam4x/zsh-iterm-touchbar"
 zplug "Aloxaf/fzf-tab"
 zplug "zdharma/fast-syntax-highlighting", defer:2
 
-zplug "~/.config/zsh/plugins", from:local, defer:1
+zplug "~/.config/zsh/plugins", from:local, defer:2
 zplug "/usr/local/opt/git-extras/share/git-extras", from:local, defer:1
 
 zplug "romkatv/powerlevel10k", use:"powerlevel10k.zsh-theme"
