@@ -13,4 +13,5 @@ let g:coc_global_extensions = [
 	\"coc-syntax",
 	\"coc-tsserver",
 	\"coc-yaml",
+	\"coc-styled-components",
 \]

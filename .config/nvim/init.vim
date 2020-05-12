@@ -7,6 +7,7 @@ filetype off
 
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'arcticicestudio/nord-vim' " Theme
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' } " Syntax for styled components
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'editorconfig/editorconfig-vim' " Default formatting
 Plug 'honza/vim-snippets' " Some snippets
