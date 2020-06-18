@@ -1,9 +1,13 @@
 [user]
-	name = Matt Drover
-	email = m.drover25@gmail.com
+  name = Matt Drover
+  email = m.drover25@gmail.com
 [include]
-	path = .gitaliases
+  path = .gitaliases
 [core]
-  pager = "delta $(if [[ $ITERM_PROFILE =~ 'light' ]]; then echo --theme=OneHalfLight; else echo --theme=OneHalfDark; fi)"
+  pager = "delta $(if [[ $ITERM_PROFILE =~ 'light' ]]; then echo --theme=OneHalfLight; else echo --theme=Nord; fi)"
 [color]
-	ui = true
+  ui = true
+[commit]
+  verbose = true
+[pull]
+	rebase = false

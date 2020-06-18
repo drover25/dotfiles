@@ -10,10 +10,10 @@ Plug 'arcticicestudio/nord-vim' " Theme
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' } " Syntax for styled components
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'editorconfig/editorconfig-vim' " Default formatting
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 Plug 'honza/vim-snippets' " Some snippets
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
 Plug 'lifepillar/vim-solarized8' " Theme
-Plug 'liuchengxu/vista.vim' " View structure of file
 Plug 'morhetz/gruvbox' " Theme
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " A lot of things...
 Plug 'qpkorr/vim-bufkill' " Kill buffers w/o killing the split
