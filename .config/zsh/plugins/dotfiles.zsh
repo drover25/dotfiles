@@ -1,2 +1,4 @@
-alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias cst='cfg status'
+alias dot='dotbare'
+alias dots='dot fstat'
+export DOTBARE_DIR="$HOME/.cfg"
+export DOTBARE_TREE="$HOME"

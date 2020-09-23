@@ -9,5 +9,6 @@
   ui = true
 [commit]
   verbose = true
+	gpgsign = false
 [pull]
 	rebase = false

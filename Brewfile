@@ -37,6 +37,7 @@ brew "wget"
 brew "zplug"
 brew "zsh"
 
+cask "1password"
 cask "alfred"
 cask "brave-browser"
 cask "docker"
@@ -51,9 +52,9 @@ cask "slack"
 cask "spotify"
 cask "station"
 
-mas "1Password", id: 1333542190
 mas "Spark", id: 1176895641
 mas "Magnet", id: 441258766
+mas "NordVPN IKE - Unlimited VPN", id: 1116599239
 
 brew "aws-elasticbeanstalk"
 brew "aws-google-auth"

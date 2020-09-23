@@ -12,7 +12,8 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'editorconfig/editorconfig-vim' " Default formatting
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 Plug 'honza/vim-snippets' " Some snippets
-Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
+" Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
+Plug 'junegunn/fzf'
 Plug 'lifepillar/vim-solarized8' " Theme
 Plug 'morhetz/gruvbox' " Theme
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " A lot of things...
