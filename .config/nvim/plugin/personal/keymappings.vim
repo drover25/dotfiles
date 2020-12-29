@@ -1,15 +1,17 @@
 let mapleader=','
 
 " Quick save and exit
-nnoremap <leader>w :w<CR>
-nnoremap <leader>wq :wq<CR>
-
-" Get back to normal quickly
-inoremap jk <Esc>
-vnoremap jk <Esc>
-
-" 'Zoom'. Open current buffer in a new tab.
-nnoremap <c-w>z :tabnew %<CR>
+if !exists('g:vscode')
+  nnoremap <leader>w :w<CR>
+  nnoremap <leader>wq :wq<CR>
+  " Get back to normal quickly
+  inoremap jk <Esc>
+  vnoremap jk <Esc>
+  " 'Zoom'. Open current buffer in a new tab.
+  nnoremap <c-w>z :tabnew %<CR>
+else
+  nnoremap <leader>w <Cmd>call VSCodeNotify('workbench.action.files.save')<CR>
+endif
 
 " Toggle paste mode
 set pastetoggle=<F2>

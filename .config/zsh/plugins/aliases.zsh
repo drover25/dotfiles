@@ -1,24 +1,22 @@
-bat-theme() {
 case $ITERM_PROFILE in
   nord)
-    echo --theme=Nord
+    export BAT_THEME="Nord"
     ;;
   solarized-dark)
-    echo --theme="Solarized \(dark\)"
+    export BAT_THEME=""Solarized \(dark\)""
     ;;
   solarized-light)
-    echo --theme="Solarized \(light\)"
+    export BAT_THEME=""Solarized \(light\)""
     ;;
   *)
     if [[ $ITERM_PROFILE =~ 'light' ]]
-    then echo --theme=OneHalfLight
-    else echo --theme=OneHalfDark
+    then export BAT_THEME="OneHalfLight"
+    else export BAT_THEME="OneHalfDark"
     fi
     ;;
 esac
-}
 
-alias cat='bat $(bat-theme)'
+alias cat='bat'
 
 alias ls='exa'
 alias la='exa -la --git'

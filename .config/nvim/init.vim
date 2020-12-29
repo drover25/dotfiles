@@ -5,46 +5,78 @@ runtime! before/**/*.vim
 
 filetype off
 
-call plug#begin('~/.local/share/nvim/plugged')
+lua require ('plugins')
 if !exists('g:vscode')
-  " ordinary neovim
-  Plug 'arcticicestudio/nord-vim' " Theme
-  Plug 'styled-components/vim-styled-components', { 'branch': 'main' } " Syntax for styled components
-  Plug 'christoomey/vim-tmux-navigator'
-  Plug 'editorconfig/editorconfig-vim' " Default formatting
-  Plug 'honza/vim-snippets' " Some snippets
-  " Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
-  Plug 'junegunn/fzf'
-  Plug 'lifepillar/vim-solarized8' " Theme
-  Plug 'morhetz/gruvbox' " Theme
-  Plug 'neoclide/coc.nvim', {'branch': 'release'} " A lot of things...
-  Plug 'qpkorr/vim-bufkill' " Kill buffers w/o killing the split
-  Plug 'rakr/vim-one' " Theme
-  Plug 'rbong/vim-flog' " git graph
-  Plug 'ryanoasis/vim-devicons' " Icons
-  Plug 'sheerun/vim-polyglot' " Syntax plugins
-  " Plug 'nvim-treesitter/nvim-treesitter'
-  Plug 'shumphrey/fugitive-gitlab.vim' " GitLab/fugitive integration
-  Plug 'tmux-plugins/vim-tmux-focus-events' " TMUX integration
-  Plug 'tpope/vim-commentary' " Comment all the things
-  Plug 'tpope/vim-fugitive' " source control plugins
-  Plug 'tpope/vim-obsession' " Save vim sessions. Works nice with TMUX
-  Plug 'tpope/vim-rhubarb' " Github/fugitive integration
-  Plug 'vim-airline/vim-airline' " Statusbar plugins
-  Plug 'vim-airline/vim-airline-themes' " Statusbar plugins
-  Plug 'voldikss/vim-floaterm' " Floating terminal!
-  Plug 'camspiers/animate.vim'
-  Plug 'camspiers/lens.vim'
-  Plug 'nvim-lua/popup.nvim'
-  Plug 'nvim-lua/plenary.nvim'
-  Plug 'nvim-lua/telescope.nvim'
+  " lua require('lsp')
+  lua require('highlighting')
+  lua require('fuzzyfinder')
+  lua require('spaceline')
+  lua require('gitdisplay')
+
+  let g:vista_sidebar_position = 'vertical topleft'
+  let g:vista_default_executive = 'coc'
+  let g:vista_fzf_preview = ['right:50%']
+  let g:vista#renderer#enable_icon = 1
+  nnoremap <C-t> :Vista!!<CR>
+
+  " " Use completion-nvim in every buffer
+  " autocmd BufEnter * lua require'completion'.on_attach()
+  " " Use <Tab> and <S-Tab> to navigate through popup menu
+  " inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+  " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+  " " Set completeopt to have a better completion experience
+  " set completeopt=menuone,noinsert,noselect
+  " " Avoid showing message extra message when using completion
+  " set shortmess+=c
+  " " Tune matching
+  " let g:completion_matching_smart_case = 1
+  " let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy', 'all']
+  " " Setup snippets
+  " let g:completion_enable_snippet = 'vim-vsnip'
+  " " Completion chain
+  " let g:completion_chain_complete_list = [
+  "       \{'complete_items': ['lsp', 'snippet']},
+  "       \{'complete_items': ['buffers', 'tmux']},
+  "       \{'mode': '<c-p>'},
+  "       \{'mode': '<c-n>'}
+  "       \]
+  " let g:completion_auto_change_source = 1
+
+  nnoremap <C-n> :LuaTreeToggle<CR>
+  nnoremap <leader>f :LuaTreeFindFile<CR>
+  let g:lua_tree_bindings = {
+    \ 'edit':            ['<CR>', 'o'],
+    \ 'edit_vsplit':     '<C-v>',
+    \ 'edit_split':      '<C-x>',
+    \ 'edit_tab':        '<C-t>',
+    \ 'toggle_ignored':  'I',
+    \ 'toggle_dotfiles': 'H',
+    \ 'refresh':         'R',
+    \ 'preview':         '<Tab>',
+    \ 'cd':              '<C-]>',
+    \ 'create':          'a',
+    \ 'remove':          'd',
+    \ 'rename':          'r',
+    \ 'cut':             'x',
+    \ 'copy':            'y',
+    \ 'paste':           'p',
+    \ 'prev_git_item':   '[c',
+    \ 'next_git_item':   ']c',
+    \ }
+else
+  nnoremap <C-j> <Cmd>call VSCodeNotify('workbench.action.focusBelowGroup')<CR>
+  xnoremap <C-j> <Cmd>call VSCodeNotify('workbench.action.focusBelowGroup')<CR>
+  nnoremap <C-k> <Cmd>call VSCodeNotify('workbench.action.focusAboveGroup')<CR>
+  xnoremap <C-k> <Cmd>call VSCodeNotify('workbench.action.focusAboveGroup')<CR>
+  nnoremap <C-h> <Cmd>call VSCodeNotify('workbench.action.focusLeftGroup')<CR>
+  xnoremap <C-h> <Cmd>call VSCodeNotify('workbench.action.focusLeftGroup')<CR>
+  nnoremap <C-l> <Cmd>call VSCodeNotify('workbench.action.focusRightGroup')<CR>
+  xnoremap <C-l> <Cmd>call VSCodeNotify('workbench.action.focusRightGroup')<CR>
+  xmap gc  <Plug>VSCodeCommentary
+  nmap gc  <Plug>VSCodeCommentary
+  omap gc  <Plug>VSCodeCommentary
+  nmap gcc <Plug>VSCodeCommentaryLine
 endif
-Plug 'tpope/vim-repeat' " Allow plugins to harness .
-Plug 'tpope/vim-sensible' " Sensible defaults
-Plug 'tpope/vim-surround' " Surround action for text objects
-Plug 'tpope/vim-unimpaired' " Pairs of handy bracket mappings
-Plug 'wellle/targets.vim' " Add some more text objects
-call plug#end()
 
 filetype plugin indent on
 

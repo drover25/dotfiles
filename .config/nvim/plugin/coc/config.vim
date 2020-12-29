@@ -1,7 +1,4 @@
 if !exists('g:vscode')
-  " Add status line support, for integration with other plugin, checkout `:h coc-status`
-  set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
   " Use `:Format` to format current buffer
   command! -nargs=0 Format :call CocAction('format')
 
