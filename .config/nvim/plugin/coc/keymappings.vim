@@ -15,7 +15,20 @@ if !exists('g:vscode')
   inoremap <silent><expr> <c-space> coc#refresh()
 
   " Remap for do codeAction of selected region
-  xmap <leader>a  <Plug>(coc-codeaction-selected)
-  nmap <leader>a  <Plug>(coc-codeaction-selected)
+  nnoremap <leader>a :Telescope coc line_code_actions<CR>
+
+  " Use K to show documentation in preview window.
+  nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+  function! s:show_documentation()
+    if (index(['vim','help'], &filetype) >= 0)
+      execute 'h '.expand('<cword>')
+    elseif (coc#rpc#ready())
+      call CocActionAsync('doHover')
+    else
+      execute '!' . &keywordprg . " " . expand('<cword>')
+    endif
+  endfunction
+
 
 endif

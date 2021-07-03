@@ -1,3 +1,3 @@
 if !exists('g:vscode')
-  nmap <silent> gst :Gstatus<CR>
+  nmap <silent> gst :Neogit<CR>
 endif

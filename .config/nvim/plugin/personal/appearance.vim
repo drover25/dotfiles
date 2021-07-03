@@ -23,6 +23,11 @@ if !exists('g:vscode')
     au TermOpen * setlocal nonumber norelativenumber signcolumn=no " Disable linenumbers in term
   endif
 
+  let g:indent_blankline_use_treesitter=v:true
+  let g:indent_blankline_show_current_context=v:true
+  let g:indent_blankline_char = '│'
+
+
   augroup highlight_yank
     autocmd!
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank("IncSearch", 1000)
@@ -45,7 +50,15 @@ if !exists('g:vscode')
     set background=light
     let g:gruvbox_italic=1
     colorscheme gruvbox
-  elseif iterm_profile == "nord"
+  elseif iterm_profile == "light"
+    set background=light
+    let g:one_allow_italics=1
+    colorscheme one
+  elseif iterm_profile == "dark"
+    set background=dark
+    let g:one_allow_italics=1
+    colorscheme one
+  else
     set background=dark
     let g:nord_underline=1
     let g:nord_italic=1
@@ -54,13 +67,5 @@ if !exists('g:vscode')
     let g:nord_bold_vertical_split_line=1
     let g:nord_uniform_status_lines=0
     colorscheme aurora
-  elseif iterm_profile == "light"
-    set background=light
-    let g:one_allow_italics=1
-    colorscheme one
-  else
-    set background=dark
-    let g:one_allow_italics=1
-    colorscheme one
   endif
 endif

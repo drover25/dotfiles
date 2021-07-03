@@ -12,12 +12,12 @@ if !exists('g:vscode')
   lua require('fuzzyfinder')
   lua require('spaceline')
   lua require('gitdisplay')
+  lua require('misc')
 
   let g:vista_sidebar_position = 'vertical topleft'
   let g:vista_default_executive = 'coc'
   let g:vista_fzf_preview = ['right:50%']
   let g:vista#renderer#enable_icon = 1
-  nnoremap <C-t> :Vista!!<CR>
 
   " " Use completion-nvim in every buffer
   " autocmd BufEnter * lua require'completion'.on_attach()
@@ -42,27 +42,8 @@ if !exists('g:vscode')
   "       \]
   " let g:completion_auto_change_source = 1
 
-  nnoremap <C-n> :LuaTreeToggle<CR>
-  nnoremap <leader>f :LuaTreeFindFile<CR>
-  let g:lua_tree_bindings = {
-    \ 'edit':            ['<CR>', 'o'],
-    \ 'edit_vsplit':     '<C-v>',
-    \ 'edit_split':      '<C-x>',
-    \ 'edit_tab':        '<C-t>',
-    \ 'toggle_ignored':  'I',
-    \ 'toggle_dotfiles': 'H',
-    \ 'refresh':         'R',
-    \ 'preview':         '<Tab>',
-    \ 'cd':              '<C-]>',
-    \ 'create':          'a',
-    \ 'remove':          'd',
-    \ 'rename':          'r',
-    \ 'cut':             'x',
-    \ 'copy':            'y',
-    \ 'paste':           'p',
-    \ 'prev_git_item':   '[c',
-    \ 'next_git_item':   ']c',
-    \ }
+  nnoremap <C-n> :NvimTreeToggle<CR>
+  nnoremap <leader>f :NvimTreeFindFile<CR>
 else
   nnoremap <C-j> <Cmd>call VSCodeNotify('workbench.action.focusBelowGroup')<CR>
   xnoremap <C-j> <Cmd>call VSCodeNotify('workbench.action.focusBelowGroup')<CR>

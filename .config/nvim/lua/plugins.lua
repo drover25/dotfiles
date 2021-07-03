@@ -13,11 +13,11 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function()
   -- General Plugins
   use {
-    'tpope/vim-repeat' ,
-    'tpope/vim-sensible' ,
-    'tpope/vim-surround' ,
-    'tpope/vim-unimpaired' ,
-    'wellle/targets.vim' ,
+    'tpope/vim-repeat',
+    'tpope/vim-sensible',
+    'tpope/vim-surround',
+    'tpope/vim-unimpaired',
+    'wellle/targets.vim',
   }
 
   -- Not in VSCode
@@ -27,15 +27,10 @@ return require('packer').startup(function()
     'editorconfig/editorconfig-vim' ,
     'honza/vim-snippets' ,
     {'neoclide/coc.nvim', branch = 'release'} ,
-    'qpkorr/vim-bufkill' ,
-    'tmux-plugins/vim-tmux-focus-events' ,
     'tpope/vim-commentary' ,
-    'tpope/vim-fugitive' ,
     'tpope/vim-obsession' ,
-    'liuchengxu/vista.vim',
     'nvim-treesitter/nvim-treesitter',
     'nvim-treesitter/nvim-treesitter-textobjects',
-    'romgrk/nvim-treesitter-context',
     'christianchiarulli/nvcode-color-schemes.vim',
     'nvim-lua/popup.nvim',
     'nvim-lua/plenary.nvim',
@@ -44,6 +39,20 @@ return require('packer').startup(function()
     'kyazdani42/nvim-tree.lua',
     'glepnir/galaxyline.nvim',
     'lewis6991/gitsigns.nvim',
+    'junegunn/goyo.vim',
+    'mattn/emmet-vim',
+    'vim-test/vim-test',
+    'fannheyward/telescope-coc.nvim',
+    { 'lukas-reineke/indent-blankline.nvim', branch = 'lua' },
+    'steelsojka/pears.nvim',
+    'ggandor/lightspeed.nvim',
+    {
+      'TimUntersberger/neogit',
+      requires = { 
+        'nvim-lua/plenary.nvim',
+        'sindrets/diffview.nvim'
+      }
+    }
   }
 
   -- -- Lua LSP stuff
