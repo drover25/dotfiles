@@ -1,10 +1,55 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# Personal Zsh configuration file. It is strongly recommended to keep all
+# shell customization and configuration (including exported environment
+# variables such as PATH) in this file or in files source by it.
+#
+# Documentation: https://github.com/romkatv/zsh4humans/blob/v5/README.md.
 
+# Periodic auto-update on Zsh startup: 'ask' or 'no'.
+# You can manually run `z4h update` to update everything.
+zstyle ':z4h:' auto-update      'no'
+# Ask whether to auto-update this often; has no effect if auto-update is 'no'.
+zstyle ':z4h:' auto-update-days '28'
+
+# Automaticaly wrap TTY with a transparent tmux ('integrated'), or start a
+# full-fledged tmux ('system'), or disable features that require tmux ('no').
+zstyle ':z4h:' start-tmux       'no'
+# Move prompt to the bottom when zsh starts up so that it's always in the
+# same position. Has no effect if start-tmux is 'no'.
+zstyle ':z4h:' prompt-at-bottom 'yes'
+
+# Keyboard type: 'mac' or 'pc'.
+zstyle ':z4h:bindkey' keyboard  'mac'
+
+# Right-arrow key accepts one character ('partial-accept') from
+# command autosuggestions or the whole thing ('accept')?
+zstyle ':z4h:autosuggestions' forward-char 'accept'
+
+# Enable ('yes') or disable ('no') automatic teleportation of z4h over
+# ssh when connecting to these hosts.
+zstyle ':z4h:ssh:example-hostname1'   enable 'yes'
+zstyle ':z4h:ssh:*.example-hostname2' enable 'no'
+# The default value if none of the overrides above match the hostname.
+zstyle ':z4h:ssh:*'                   enable 'no'
+
+# Send these files over to the remote host when connecting over ssh to the
+# enabled hosts.
+zstyle ':z4h:ssh:*' send-extra-files '~/.nanorc' '~/.env.zsh'
+
+# Clone additional Git repositories from GitHub.
+#
+# This doesn't do anything apart from cloning the repository and keeping it
+# up-to-date. Cloned files can be used after `z4h init`. This is just an
+# example. If you don't plan to use Oh My Zsh, delete this line.
+z4h install kazhala/dotbare || return
+z4h install ohmyzsh/ohmyzsh || return
+
+# Install or update core components (fzf, zsh-autosuggestions, etc.) and
+# initialize Zsh. After this point console I/O is unavailable until Zsh
+# is fully initialized. Everything that requires user interaction or can
+# perform network I/O must be done above. Everything else is best done below.
+z4h init || return
+
+# Extend PATH.
 path=(
     /usr/local/sbin
     /usr/local/bin
@@ -16,96 +61,37 @@ path=(
     $path
 )
 
-export ZPLUG_HOME=/usr/local/opt/zplug
-source $ZPLUG_HOME/init.zsh
-zplug "plugins/colored-man-pages", from:oh-my-zsh
-zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/vi-mode", from:oh-my-zsh
-zplug "zsh-users/zsh-completions"
-zplug "Aloxaf/fzf-tab"
-zplug "kazhala/dotbare"
-zplug "zdharma/fast-syntax-highlighting", defer:2
-zplug "~/.config/zsh/plugins", from:local, defer:2
-zplug "/usr/local/opt/git-extras/share/git-extras", from:local, defer:2
-zplug "romkatv/powerlevel10k", use:"powerlevel10k.zsh-theme"
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-# Then, source plugins and add commands to $PATH
-zplug load
+# Export environment variables.
+export GPG_TTY=$TTY
 
-function switch-p10k-config() {
-  emulate -L zsh
-  case $ITERM_PROFILE in
-    dark) local cfg=~/.config/zsh/theme/p10k-dark.zsh;;
-    gruvbox-dark) local cfg=~/.config/zsh/theme/p10k-dark.zsh;;
-    *)        local cfg=~/.config/zsh/theme/p10k-rainbow.zsh;;
-  esac
-  [[ $cfg == $current_p10k_config ]] || source $cfg
-  typeset -g current_p10k_config=$cfg
-}
+# Source additional local files if they exist.
+z4h source ~/.env.zsh
 
-switch-p10k-config
-precmd_functions+=(switch-p10k-config)
+# Use additional Git repositories pulled in with `z4h install`.
+#
+# This is just an example that you should delete. It does nothing useful.
+z4h source $Z4H/kazhala/dotbare/dotbare.plugin.zsh
+z4h source $Z4H/ohmyzsh/ohmyzsh/lib/git.zsh
+z4h source $Z4H/ohmyzsh/ohmyzsh/plugins/colored-man-pages/*.zsh
+z4h source $Z4H/ohmyzsh/ohmyzsh/plugins/git/*.zsh
 
-# ### Added by Zinit's installer
-# if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
-#     print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
-#     command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-#     command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
-#         print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
-#         print -P "%F{160}▓▒░ The clone has failed.%f%b"
-# fi
+# Source additional local files if they exist.
+z4h source ~/.config/zsh/plugins/*.zsh
 
-# source "$HOME/.zinit/bin/zinit.zsh"
-# # autoload -Uz _zinit
-# # (( ${+_comps} )) && _comps[zinit]=_zinit
+fpath+=(/usr/local/opt/git-extras/share/git-extras)
 
-# # Load a few important annexes, without Turbo
-# # (this is currently required for annexes)
-# zinit light-mode for \
-#     zinit-zsh/z-a-rust \
-#     zinit-zsh/z-a-as-monitor \
-#     zinit-zsh/z-a-patch-dl \
-#     zinit-zsh/z-a-bin-gem-node
+# Define key bindings.
+z4h bindkey undo Ctrl+/  # undo the last command line change
+z4h bindkey redo Alt+/   # redo the last undone command line change
 
-# ### End of Zinit's installer chunk
+z4h bindkey z4h-cd-back    Shift+Left   # cd into the previous directory
+z4h bindkey z4h-cd-forward Shift+Right  # cd into the next directory
+z4h bindkey z4h-cd-up      Shift+Up     # cd into the parent directory
+z4h bindkey z4h-cd-down    Shift+Down   # cd into a child directory
 
-# zinit snippet OMZP::colored-man-pages
-# zinit snippet OMZP::git
-# zinit snippet OMZP::kubectl
-# zinit snippet OMZP::vi-mode
-# # zinit snippet OMZP::docker
+# Autoload functions.
+autoload -Uz zmv
 
-# for plugin in  ~/.config/zsh/plugins/**/*; do
-#   zinit snippet $plugin
-# done
-
-# zinit light-mode for \
-#   zsh-users/zsh-completions \
-#   iam4x/zsh-iterm-touchbar \
-#   Aloxaf/fzf-tab \
-#   zdharma/fast-syntax-highlighting \
-#   romkatv/powerlevel10k
-
-# function switch-p10k-config() {
-#   emulate -L zsh
-#   case $ITERM_PROFILE in
-#     dark)         local cfg=~/.config/zsh/theme/p10k-dark.zsh;;
-#     gruvbox-dark) local cfg=~/.config/zsh/theme/p10k-dark.zsh;;
-#     *)            local cfg=~/.config/zsh/theme/p10k-rainbow.zsh;;
-#   esac
-#   [[ $cfg == $current_p10k_config ]] || source $cfg
-#   typeset -g current_p10k_config=$cfg
-# }
-
-# switch-p10k-config
-# precmd_functions+=(switch-p10k-config)
-
-# autoload -Uz compinit
-# compinit
-# zinit cdreplay -q
+# Set shell options: http://zsh.sourceforge.net/Doc/Release/Options.html.
+setopt glob_dots     # no special treatment for file names with a leading dot
+setopt no_auto_menu  # require an extra TAB press to open the completion menu

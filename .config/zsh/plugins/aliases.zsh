@@ -36,6 +36,8 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
+alias oid='mongo --eval "new ObjectId().valueOf()" --nodb --quiet | tr -d "\n"'
+
 mdless() {
   mdcat "$@" | less -r
 }
