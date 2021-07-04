@@ -28,7 +28,7 @@ brew "lf"
 brew "mas"
 brew "mdcat"
 brew "mosh"
-brew "neovim", args: ["HEAD"]
+brew "neovim"
 brew "pandoc"
 brew "python"
 brew "ripgrep"
