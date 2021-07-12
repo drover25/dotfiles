@@ -24,9 +24,3 @@ require('gitsigns').setup {
   },
   sign_priority = 6,
 }
-
-require('neogit').setup {
-  integrations = {
-    diffview = true
-  }
-}

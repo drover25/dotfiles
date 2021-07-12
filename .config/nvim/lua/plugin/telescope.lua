@@ -5,5 +5,4 @@ require('telescope').setup{
     generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
   }
 }
-require('telescope').load_extension('coc')
 
