@@ -34,9 +34,9 @@ return packer.startup(function(use)
             event = 'InsertEnter'
         }, -- Snippets
         {
-            'hrsh7th/vim-vsnip',
-            event = 'InsertEnter',
-            requires = {use 'rafamadriz/friendly-snippets'}
+            'L3MON4D3/LuaSnip',
+            requires = {use 'rafamadriz/friendly-snippets'},
+            event = 'InsertEnter'
         }
     }
     -- Comments
@@ -49,6 +49,7 @@ return packer.startup(function(use)
     use {'lewis6991/gitsigns.nvim', setup = [[require('plugin.gitsigns')]]}
     use {
         'TimUntersberger/neogit',
+        setup = [[require('plugin.neogit')]],
         requires = {'nvim-lua/plenary.nvim', 'sindrets/diffview.nvim'}
     }
     -- Icons
@@ -68,6 +69,7 @@ return packer.startup(function(use)
             'jose-elias-alvarez/nvim-lsp-ts-utils'
         }
     }
+    use 'nvim-lua/lsp-status.nvim'
     -- Navigation
     use {'ggandor/lightspeed.nvim', setup = [[require('plugin.lightspeed')]]}
     -- Repeat
@@ -75,7 +77,8 @@ return packer.startup(function(use)
     -- Sessions
     use 'tpope/vim-obsession'
     -- Statusline
-    use {'glepnir/galaxyline.nvim', setup = [[require('plugin.galaxyline')]]}
+    -- use {'glepnir/galaxyline.nvim', setup = [[require('plugin.galaxyline')]]}
+    use {'hoob3rt/lualine.nvim', setup = [[require('plugin.lualine')]]}
     -- Surround
     use 'tpope/vim-surround'
     -- Targets
@@ -91,14 +94,14 @@ return packer.startup(function(use)
     -- Treesitter
     use {
         'nvim-treesitter/nvim-treesitter',
+        branch = "0.5-compat",
         run = ':TSUpdate',
-        setup = [[require('plugin.nvim-treesitter')]],
-        requires = {
-            'p00f/nvim-ts-rainbow', 'windwp/nvim-ts-autotag',
-            'JoosepAlviste/nvim-ts-context-commentstring'
-        }
+        setup = [[require('plugin.nvim-treesitter')]]
     }
-    use 'nvim-treesitter/nvim-treesitter-textobjects'
+    use {'nvim-treesitter/nvim-treesitter-textobjects', branch = "0.5-compat"}
+    use {'JoosepAlviste/nvim-ts-context-commentstring'}
+    use {'p00f/nvim-ts-rainbow'}
+    use {'windwp/nvim-ts-autotag'}
 
     -- Autoinstall/compile plugins
     if vim.fn.isdirectory(vim.fn.glob(plugin_path)) > 0 then packer.install() end

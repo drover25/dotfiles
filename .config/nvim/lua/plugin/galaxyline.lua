@@ -1,7 +1,6 @@
 local gl = require('galaxyline')
 local gls = gl.section
 gl.short_line_list = {'LuaTree', 'vista', 'dbui'}
-
 local nord_colors = {
     darktext = '#2E3440',
     bg = '#3B4252',
@@ -17,18 +16,15 @@ local nord_colors = {
     blue = '#0087d7',
     red = '#BF616A'
 }
-
 local buffer_not_empty = function()
     if vim.fn.empty(vim.fn.expand('%:t')) ~= 1 then return true end
     return false
 end
-
 local checkwidth = function()
     local squeeze_width = vim.fn.winwidth(0) / 2
     if squeeze_width > 40 then return true end
     return false
 end
-
 local separator = function(color)
     return {
         provider = function() return '' end,
@@ -36,7 +32,6 @@ local separator = function(color)
         highlight = {nord_colors.bg, color}
     }
 end
-
 local mode_color = function()
     local color = {
         n = nord_colors.lightblue,
@@ -47,7 +42,6 @@ local mode_color = function()
     }
     return color[vim.fn.mode()]
 end
-
 gls.left = {
     {
         ViMode = {
@@ -143,7 +137,6 @@ gls.left = {
         }
     }
 }
-
 gls.short_line_left = {
     {
         ShortFileIcon = {
@@ -161,7 +154,6 @@ gls.short_line_left = {
         }
     }
 }
-
 gls.right = {
     {
         RightSep = {
