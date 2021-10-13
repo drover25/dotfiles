@@ -1,6 +1,8 @@
+vim.g.coq_settings = {["auto_start"] = true, ["keymap.jump_to_mark"] = '<c-s>'}
+
 local lspconfig = require('lspconfig')
 local lspinstall = require('lspinstall')
-local lspsaga = require('lspsaga')
+local cmp_nvim_lsp = require('cmp_nvim_lsp')
 local languages = require('plugin.nvim-lspconfig.format')
 local on_attach = require('plugin.nvim-lspconfig.on-attach')
 
@@ -50,18 +52,9 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 local function setup_servers()
     lspinstall.setup()
     local installed = lspinstall.installed_servers()
-    lspsaga.init_lsp_saga({
-        -- add your config value here
-        -- default value
-        use_saga_diagnostic_sign = true,
-        error_sign = ' ',
-        warn_sign = ' ',
-        hint_sign = '',
-        infor_sign = ''
-    })
     for _, server in pairs(installed) do
         local config = servers[server] or {}
-        config.capabilities = capabilities
+        config.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
         config.on_attach = on_attach
         lspconfig[server].setup(config)
     end
@@ -72,14 +65,12 @@ local function setup_servers()
             update_in_insert = false,
             underline = true
         })
-    vim.cmd [[ autocmd CursorHold * lua require'lspsaga.diagnostic'.show_cursor_diagnostics() ]]
-
-    vim.cmd [[ highlight link LspSagaDiagnosticBorder Statement ]]
-    vim.cmd [[ highlight link LspSagaDiagnosticHeader WarningMsg ]]
-    vim.cmd [[ highlight link LspSagaDiagnosticTruncateLine Statement ]]
-    vim.cmd [[ highlight link LspDiagnosticsFloatingError TSError ]]
-    vim.cmd [[ highlight link LspDiagnosticsFloatingWarn WarningMsg ]]
-
+    local pop_opts = {border = "rounded", max_width = 80}
+    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+                                                 vim.lsp.handlers.hover,
+                                                 pop_opts)
+    vim.lsp.handlers["textDocument/signatureHelp"] =
+        vim.lsp.with(vim.lsp.handlers.signature_help, pop_opts)
 end
 
 setup_servers()

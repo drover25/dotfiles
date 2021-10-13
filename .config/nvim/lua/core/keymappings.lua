@@ -24,7 +24,7 @@ tmap('<C-l>', '<C-\\><C-n><C-w>l')
 
 -- Telescope
 nmap('<c-p>',
-     ':Telescope find_files find_command=rg,-i,--hidden,--files,-g,!.git<CR>')
+     ':lua require"telescope.builtin".find_files({ hidden = true })<CR>')
 nmap('<c-s>', ':Telescope buffers<CR>')
 nmap('<c-c>', ':Telescope builtin<CR>')
 nmap('<leader>g', ':Telescope live_grep<CR>')

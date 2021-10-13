@@ -26,25 +26,16 @@ return packer.startup(function(use)
         'ChristianChiarulli/nvcode-color-schemes.vim',
         setup = [[require('plugin.nvcode-color-schemes')]]
     }
-    -- Completion
-    use {
-        {
-            'hrsh7th/nvim-compe',
-            setup = [[require('plugin.nvim-compe')]],
-            event = 'InsertEnter'
-        }, -- Snippets
-        {
-            'L3MON4D3/LuaSnip',
-            requires = {use 'rafamadriz/friendly-snippets'},
-            event = 'InsertEnter'
-        }
-    }
     -- Comments
     use 'tpope/vim-commentary'
     -- EditorConfig
     use 'editorconfig/editorconfig-vim'
     -- File explorer
-    use 'kyazdani42/nvim-tree.lua'
+    use {
+        'kyazdani42/nvim-tree.lua',
+        requires = 'kyazdani42/nvim-web-devicons',
+        setup = [[require('plugin.nvim-tree')]]
+    }
     -- Git
     use {'lewis6991/gitsigns.nvim', setup = [[require('plugin.gitsigns')]]}
     use {
@@ -65,8 +56,17 @@ return packer.startup(function(use)
         'neovim/nvim-lspconfig',
         setup = [[require('plugin.nvim-lspconfig')]],
         requires = {
-            'kabouzeid/nvim-lspinstall', 'glepnir/lspsaga.nvim',
-            'jose-elias-alvarez/nvim-lsp-ts-utils'
+            'kabouzeid/nvim-lspinstall', 'jose-elias-alvarez/nvim-lsp-ts-utils',
+            {
+                'hrsh7th/nvim-cmp',
+                setup = [[require('plugin.nvim-cmp')]],
+                event = 'InsertEnter',
+                requires = {
+                    'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer',
+                    'hrsh7th/cmp-vsnip', 'hrsh7th/vim-vsnip',
+                    'hrsh7th/cmp-path', 'hrsh7th/cmp-nvim-lua'
+                }
+            }
         }
     }
     use 'nvim-lua/lsp-status.nvim'
@@ -87,18 +87,20 @@ return packer.startup(function(use)
     use {
         'nvim-telescope/telescope.nvim',
         setup = [[require('plugin.telescope')]],
-        requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'}
+        requires = {
+            'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim',
+            {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
+        }
     }
     -- Tmux
     use {'christoomey/vim-tmux-navigator'}
     -- Treesitter
     use {
         'nvim-treesitter/nvim-treesitter',
-        branch = "0.5-compat",
         run = ':TSUpdate',
         setup = [[require('plugin.nvim-treesitter')]]
     }
-    use {'nvim-treesitter/nvim-treesitter-textobjects', branch = "0.5-compat"}
+    use {'nvim-treesitter/nvim-treesitter-textobjects'}
     use {'JoosepAlviste/nvim-ts-context-commentstring'}
     use {'p00f/nvim-ts-rainbow'}
     use {'windwp/nvim-ts-autotag'}
