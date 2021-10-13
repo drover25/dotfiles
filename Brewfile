@@ -31,7 +31,7 @@ brew "luarocks"
 brew "mas"
 brew "mdcat"
 brew "mosh"
-brew "neovim"
+brew "neovim", args: ["HEAD"]
 brew "pandoc"
 brew "python"
 brew "ripgrep"
