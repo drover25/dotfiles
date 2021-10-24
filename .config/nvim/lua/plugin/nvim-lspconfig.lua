@@ -3,20 +3,6 @@ local lsp_installer = require("nvim-lsp-installer")
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
 local null_ls = require("null-ls")
 
-vim.cmd([[autocmd ColorScheme * highlight NormalFloat guibg=#1f2335]])
-vim.cmd([[autocmd ColorScheme * highlight FloatBorder guifg=white guibg=#1f2335]])
-
-local border = {
-	{ "🭽", "FloatBorder" },
-	{ "▔", "FloatBorder" },
-	{ "🭾", "FloatBorder" },
-	{ "▕", "FloatBorder" },
-	{ "🭿", "FloatBorder" },
-	{ "▁", "FloatBorder" },
-	{ "🭼", "FloatBorder" },
-	{ "▏", "FloatBorder" },
-}
-
 local function default_on_attach(client, bufnr)
 	client.resolved_capabilities.document_formatting = false
 
@@ -51,7 +37,7 @@ local function default_on_attach(client, bufnr)
 		update_in_insert = false,
 		underline = true,
 	})
-	local pop_opts = { border = border, max_width = 80 }
+	local pop_opts = { border = "rounded" }
 	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, pop_opts)
 	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, pop_opts)
 end

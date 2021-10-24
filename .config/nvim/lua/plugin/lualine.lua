@@ -1,16 +1,17 @@
 require("lualine").setup({
 	options = {
 		icons_enabled = true,
-		theme = "nord",
-		component_separators = { "", "" },
-		section_separators = { "", "" },
+		theme = "auto",
+		component_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
 		disabled_filetypes = {},
+		always_divide_middle = true,
 	},
 	sections = {
 		lualine_a = { "mode" },
-		lualine_b = { "filename" },
-		lualine_c = { "diff", require("lsp-status").status },
-		lualine_x = { "filetype" },
+		lualine_b = { { "filetype", icon_only = true }, "filename" },
+		lualine_c = { "diff", { "diagnostics", sources = { "nvim_lsp" } } },
+		lualine_x = {},
 		lualine_y = { "branch" },
 		lualine_z = { "location" },
 	},
@@ -23,5 +24,5 @@ require("lualine").setup({
 		lualine_z = {},
 	},
 	tabline = {},
-	extensions = { "nvim-tree", "quickfix" },
+	extensions = { "nvim-tree" },
 })

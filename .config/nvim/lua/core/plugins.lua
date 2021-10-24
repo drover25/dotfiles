@@ -13,13 +13,9 @@ return packer.startup(function(use)
 	packer.init({ compile_path = packer_compiled, opt_default = true })
 
 	use("nvim-lua/plenary.nvim")
-	use({ "folke/lua-dev.nvim", setup = [[require('plugin.lua-dev')]] })
 	use("wbthomason/packer.nvim")
 	use({ "windwp/nvim-autopairs", setup = [[require('plugin.nvim-autopairs')]] })
-	use({
-		"ChristianChiarulli/nvcode-color-schemes.vim",
-		setup = [[require('plugin.nvcode-color-schemes')]],
-	})
+	use("ChristianChiarulli/nvcode-color-schemes.vim")
 	use("tpope/vim-commentary")
 	use("editorconfig/editorconfig-vim")
 	use({
@@ -69,9 +65,7 @@ return packer.startup(function(use)
 	use({ "ggandor/lightspeed.nvim", setup = [[require('plugin.lightspeed')]] })
 	use("tpope/vim-repeat")
 	use("tpope/vim-obsession")
-	-- use {'glepnir/galaxyline.nvim', setup = [[require('plugin.galaxyline')]]}
-	-- use {'hoob3rt/lualine.nvim', setup = [[require('plugin.lualine')]]}
-	use({ "famiu/feline.nvim", setup = [[require('plugin.feline')]] })
+	use({ "nvim-lualine/lualine.nvim", setup = [[require('plugin.lualine')]] })
 	use("tpope/vim-surround")
 	use("wellle/targets.vim")
 	use({
