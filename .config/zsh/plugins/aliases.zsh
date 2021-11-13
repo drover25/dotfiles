@@ -1,19 +1,20 @@
 case $ITERM_PROFILE in
-  nord)
-    export BAT_THEME="Nord"
-    ;;
-  solarized-dark)
-    export BAT_THEME=""Solarized \(dark\)""
-    ;;
-  solarized-light)
-    export BAT_THEME=""Solarized \(light\)""
-    ;;
-  *)
-    if [[ $ITERM_PROFILE =~ 'light' ]]
-    then export BAT_THEME="OneHalfLight"
-    else export BAT_THEME="OneHalfDark"
-    fi
-    ;;
+nord)
+  export BAT_THEME="Nord"
+  ;;
+solarized-dark)
+  export BAT_THEME=""Solarized \(dark\)""
+  ;;
+solarized-light)
+  export BAT_THEME=""Solarized \(light\)""
+  ;;
+*)
+  if [[ $ITERM_PROFILE =~ 'light' ]]; then
+    export BAT_THEME="OneHalfLight"
+  else
+    export BAT_THEME="OneHalfDark"
+  fi
+  ;;
 esac
 
 alias cat='bat'
@@ -44,7 +45,7 @@ mdless() {
 
 get_dashboard_token() {
   kubectl describe secret -n kubernetes-dashboard \
-    $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk '{print $1}') \
-    | awk '$1=="token:"{print $2}' | pbcopy
+    $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk '{print $1}') |
+    awk '$1=="token:"{print $2}' | pbcopy
 
 }

@@ -6,7 +6,7 @@ vim.g.python3_host_prog = "/usr/local/bin/python3"
 -- Disable swap files
 vim.o.swapfile = false
 
--- Setup an undodir for persistant undo state.
+-- Setup an undodir for persistent undo state.
 -- Use persistent history.
 local undoDir = Path:new({ "/tmp/.vim-undo-dir/" })
 if not undoDir.exists then
@@ -38,3 +38,5 @@ vim.o.updatetime = 250
 vim.o.completeopt = "menu,menuone,noselect"
 
 vim.o.dictionary = "/usr/share/dict/words"
+
+vim.o.mouse = "a"

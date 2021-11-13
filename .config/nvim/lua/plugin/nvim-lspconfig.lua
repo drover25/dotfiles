@@ -27,9 +27,11 @@ local function default_on_attach(client, bufnr)
 	buf_set_keymap("n", "<leader>gh", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 	buf_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 	buf_set_keymap("n", "<leader>a", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-	buf_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-	buf_set_keymap("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
-	buf_set_keymap("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
+	buf_set_keymap("n", "[d", '<cmd>lua vim.diagnostic.goto_prev({float = {border = "single"}})<CR>', opts)
+	buf_set_keymap("n", "]d", '<cmd>lua vim.diagnostic.goto_next({float = {border = "single"}})<CR>', opts)
+	buf_set_keymap("n", "<leader>xr", ":TroubleToggle lsp_references<CR>", opts)
+	buf_set_keymap("n", "<leader>xw", ":TroubleToggle lsp_workspace_diagnostics<CR>", opts)
+	buf_set_keymap("n", "<leader>xd", ":TroubleToggle lsp_document_diagnostics<CR>", opts)
 
 	vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 		virtual_text = false,
@@ -37,17 +39,23 @@ local function default_on_attach(client, bufnr)
 		update_in_insert = false,
 		underline = true,
 	})
-	local pop_opts = { border = "rounded" }
+	local pop_opts = { border = "single" }
 	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, pop_opts)
 	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, pop_opts)
 end
 
 null_ls.config({
 	sources = {
-		null_ls.builtins.formatting.stylua,
-		null_ls.builtins.formatting.prettierd,
+		null_ls.builtins.formatting.codespell,
 		null_ls.builtins.formatting.eslint_d,
+		null_ls.builtins.formatting.prettierd,
+		null_ls.builtins.formatting.shfmt,
 		null_ls.builtins.formatting.stylua,
+
+		null_ls.builtins.diagnostics.codespell,
+		null_ls.builtins.diagnostics.hadolint,
+
+		null_ls.builtins.code_actions.gitsigns,
 	},
 })
 
@@ -60,7 +68,14 @@ lspconfig["null-ls"].setup({
 })
 
 local servers = {
-	lua = {
+	jsonls = {
+		settings = {
+			json = {
+				schemas = require("schemastore").json.schemas(),
+			},
+		},
+	},
+	sumneko_lua = {
 		settings = {
 			Lua = {
 				diagnostics = { globals = { "vim", "packer_plugins" } },
@@ -140,7 +155,7 @@ local servers = {
 
 local signs = {
 	Error = " ",
-	Warning = " ",
+	Warn = " ",
 	Hint = " ",
 	Information = " ",
 }

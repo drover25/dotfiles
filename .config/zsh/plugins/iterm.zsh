@@ -13,7 +13,7 @@ if [ "$TERM_PROGRAM" = 'iTerm.app' ]; then
     iterm-emit '1337;SetProfile=%s' "$1"
     export ITERM_PROFILE=$1
     if [[ -n "$TMUX" || "$TERM" = tmux* ]]; then
-        tmux set-environment ITERM_PROFILE $1
+      tmux set-environment ITERM_PROFILE $1
     fi
   }
 

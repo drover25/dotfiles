@@ -6,6 +6,8 @@ local luasnip = require("luasnip")
 luasnip.config.set_config({ history = true })
 require("luasnip.loaders.from_vscode").load()
 
+require("cmp-npm").setup({})
+
 local has_words_before = function()
 	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
 	return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
@@ -57,11 +59,12 @@ cmp.setup({
 		}),
 	},
 	sources = {
+		{ name = "npm", keyword_length = 3 },
 		{ name = "nvim_lsp", max_item_count = 10 },
 		{ name = "luasnip" },
-		{ name = "buffer", max_item_count = 10 },
 		{ name = "nvim_lua" },
 		{ name = "path" },
+		{ name = "buffer", max_item_count = 10 },
 	},
 	formatting = {
 		format = lspkind.cmp_format({
@@ -72,6 +75,7 @@ cmp.setup({
 				nvim_lua = "[api]",
 				path = "[path]",
 				luasnip = "[snip]",
+				npm = "[npm]",
 			},
 		}),
 	},

@@ -1,13 +1,13 @@
 function aws-login() {
-  unset AWS_PROFILE;
-  aws-google-auth -k -p "$@";
+  unset AWS_PROFILE
+  aws-google-auth -k -p "$@"
   export AWS_PROFILE="$1"
   export AWS_EB_PROFILE="$1"
 }
 
 function aws-logout() {
-  unset AWS_PROFILE;
-  unset AWS_EB_PROFILE;
+  unset AWS_PROFILE
+  unset AWS_EB_PROFILE
 }
 
 function _get_aws_profiles() {
@@ -19,5 +19,3 @@ function _aws-login {
 }
 
 compdef _aws-login aws-login
-
-

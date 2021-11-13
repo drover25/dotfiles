@@ -18,7 +18,7 @@ _fzf_compgen_dir() {
 
 # Auto-completion
 # ---------------
-[[ $- == *i* ]] && source "$fzf_path/shell/completion.zsh" 2> /dev/null
+[[ $- == *i* ]] && source "$fzf_path/shell/completion.zsh" 2>/dev/null
 
 # Key bindings
 # ------------

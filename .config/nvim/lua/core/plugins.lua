@@ -14,8 +14,11 @@ return packer.startup(function(use)
 
 	use("nvim-lua/plenary.nvim")
 	use("wbthomason/packer.nvim")
+	use("folke/lua-dev.nvim")
+
 	use({ "windwp/nvim-autopairs", setup = [[require('plugin.nvim-autopairs')]] })
 	use("ChristianChiarulli/nvcode-color-schemes.vim")
+	use({ "rmehri01/onenord.nvim", setup = [[require('plugin.onenord')]] })
 	use("tpope/vim-commentary")
 	use("editorconfig/editorconfig-vim")
 	use({
@@ -42,6 +45,7 @@ return packer.startup(function(use)
 			"williamboman/nvim-lsp-installer",
 			"jose-elias-alvarez/null-ls.nvim",
 			"jose-elias-alvarez/nvim-lsp-ts-utils",
+			"b0o/schemastore.nvim",
 			{
 				"hrsh7th/nvim-cmp",
 				setup = [[require('plugin.nvim-cmp')]],
@@ -53,6 +57,7 @@ return packer.startup(function(use)
 					"L3MON4D3/LuaSnip",
 					"hrsh7th/cmp-path",
 					"hrsh7th/cmp-nvim-lua",
+					"David-Kunz/cmp-npm",
 					{
 						"onsails/lspkind-nvim",
 						setup = [[require('plugin.lspkind-nvim')]],
@@ -62,10 +67,10 @@ return packer.startup(function(use)
 		},
 	})
 	use("nvim-lua/lsp-status.nvim")
-	use({ "ggandor/lightspeed.nvim", setup = [[require('plugin.lightspeed')]] })
+	use({ "phaazon/hop.nvim", setup = [[require('plugin.hop')]] })
 	use("tpope/vim-repeat")
 	use("tpope/vim-obsession")
-	use({ "nvim-lualine/lualine.nvim", setup = [[require('plugin.lualine')]] })
+	use({ "nvim-lualine/lualine.nvim", setup = [[require('plugin.lualine')]], requires = { "kdheepak/tabline.nvim" } })
 	use("tpope/vim-surround")
 	use("wellle/targets.vim")
 	use({
@@ -75,6 +80,8 @@ return packer.startup(function(use)
 			"nvim-lua/popup.nvim",
 			"nvim-lua/plenary.nvim",
 			{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+			"nvim-telescope/telescope-ui-select.nvim",
+			"nvim-telescope/telescope-live-grep-raw.nvim",
 		},
 	})
 	use({ "folke/trouble.nvim", setup = [[require('plugin.trouble')]] })

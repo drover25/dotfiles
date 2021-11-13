@@ -36,7 +36,6 @@ tmap("<C-l>", "<C-\\><C-n><C-w>l")
 
 -- Telescope
 lua_nmap("<c-p>", 'require"telescope.builtin".find_files({ hidden = true })')
-nmap("<c-s>", ":Telescope buffers<CR>")
 nmap("<c-c>", ":Telescope builtin<CR>")
 nmap("<leader>g", ":Telescope live_grep<CR>")
 nmap("<leader>d", ":Telescope lsp_document_diagnostics<CR>")
@@ -49,8 +48,5 @@ nmap("<C-n>", ":NvimTreeToggle<CR>")
 
 -- Trouble
 nmap("<leader>xx", ":TroubleToggle<CR>")
-nmap("<leader>xw", ":TroubleToggle lsp_workspace_diagnostics<CR>")
-nmap("<leader>xd", ":TroubleToggle lsp_document_diagnostics<CR>")
 nmap("<leader>xq", ":TroubleToggle quickfix<CR>")
 nmap("<leader>xl", ":TroubleToggle loclist<CR>")
-nmap("gr", ":TroubleToggle lsp_references<CR>")

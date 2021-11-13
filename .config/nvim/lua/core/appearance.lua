@@ -11,5 +11,3 @@ vim.cmd([[set list listchars=tab:»\ ,trail:°]])
 vim.o.signcolumn = "yes" -- Always draw the signcolumn.
 vim.o.number = true -- Absolute number on current line.
 vim.o.relativenumber = true -- Relative numbers
-
-vim.cmd([[colorscheme aurora]])
