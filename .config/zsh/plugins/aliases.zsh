@@ -1,21 +1,4 @@
-case $ITERM_PROFILE in
-nord)
-  export BAT_THEME="Nord"
-  ;;
-solarized-dark)
-  export BAT_THEME=""Solarized \(dark\)""
-  ;;
-solarized-light)
-  export BAT_THEME=""Solarized \(light\)""
-  ;;
-*)
-  if [[ $ITERM_PROFILE =~ 'light' ]]; then
-    export BAT_THEME="OneHalfLight"
-  else
-    export BAT_THEME="OneHalfDark"
-  fi
-  ;;
-esac
+export BAT_THEME="Nord"
 
 alias cat='bat'
 
