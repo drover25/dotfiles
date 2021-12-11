@@ -10,7 +10,7 @@ require("lualine").setup({
 	sections = {
 		lualine_a = { "mode" },
 		lualine_b = { { "filetype", icon_only = true }, "filename" },
-		lualine_c = { "diff", { "diagnostics", sources = { "nvim_lsp" } } },
+		lualine_c = { "diff", { "diagnostics", sources = { "nvim_diagnostic" } } },
 		lualine_x = {},
 		lualine_y = { "branch" },
 		lualine_z = { "location" },
@@ -44,5 +44,5 @@ vim.cmd([[
   set sessionoptions+=tabpages,globals " store tabpages and globals in session
 ]])
 
-U.keymap.map("n", "gb", ":TablineBufferNext<CR>", { noremap = true, silent = true })
-U.keymap.map("n", "gB", ":TablineBufferPrevious<CR>", { noremap = true, silent = true })
+-- U.keymap.map("n", "gb", ":TablineBufferNext<CR>", { noremap = true, silent = true })
+-- U.keymap.map("n", "gB", ":TablineBufferPrevious<CR>", { noremap = true, silent = true })

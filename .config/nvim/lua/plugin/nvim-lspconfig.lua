@@ -35,10 +35,11 @@ local function default_on_attach(client, bufnr)
 
 	vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 		virtual_text = false,
-		signs = true,
 		update_in_insert = false,
+		signs = false,
 		underline = true,
 	})
+
 	local pop_opts = { border = "single" }
 	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, pop_opts)
 	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, pop_opts)
@@ -54,8 +55,10 @@ null_ls.config({
 
 		null_ls.builtins.diagnostics.codespell,
 		null_ls.builtins.diagnostics.hadolint,
+		null_ls.builtins.diagnostics.shellcheck,
 
 		null_ls.builtins.code_actions.gitsigns,
+		null_ls.builtins.code_actions.shellcheck,
 	},
 })
 
@@ -93,6 +96,11 @@ local servers = {
 		},
 	},
 	tsserver = {
+		init_options = {
+			preferences = {
+				importModuleSpecifierPreference = "relative",
+			},
+		},
 		on_attach = function(client, bufnr)
 			-- disable tsserver formatting if you plan on formatting via null-ls
 			client.resolved_capabilities.document_formatting = false

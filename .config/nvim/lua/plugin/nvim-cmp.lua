@@ -59,6 +59,7 @@ cmp.setup({
 		}),
 	},
 	sources = {
+		{ name = "orgmode" },
 		{ name = "npm", keyword_length = 3 },
 		{ name = "nvim_lsp", max_item_count = 10 },
 		{ name = "luasnip" },

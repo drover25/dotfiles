@@ -19,6 +19,11 @@ return packer.startup(function(use)
 	use({ "windwp/nvim-autopairs", setup = [[require('plugin.nvim-autopairs')]] })
 	use("ChristianChiarulli/nvcode-color-schemes.vim")
 	use({ "rmehri01/onenord.nvim", setup = [[require('plugin.onenord')]] })
+	-- use("tpope/vim-commentary")
+	use({
+		"numToStr/Comment.nvim",
+		setup = [[require('plugin.comment')]],
+	})
 	use("tpope/vim-commentary")
 	use("editorconfig/editorconfig-vim")
 	use({
@@ -80,7 +85,6 @@ return packer.startup(function(use)
 			"nvim-lua/popup.nvim",
 			"nvim-lua/plenary.nvim",
 			{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
-			"nvim-telescope/telescope-ui-select.nvim",
 			"nvim-telescope/telescope-live-grep-raw.nvim",
 		},
 	})
@@ -95,6 +99,15 @@ return packer.startup(function(use)
 	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
 	use({ "p00f/nvim-ts-rainbow" })
 	use({ "windwp/nvim-ts-autotag" })
+	use({ "kristijanhusak/orgmode.nvim", setup = [[require('plugin.orgmode')]] })
+	use({
+		"folke/zen-mode.nvim",
+		setup = [[require('plugin.zen-mode')]],
+	})
+	use({
+		"stevearc/dressing.nvim",
+		setup = [[require('plugin.dressing')]],
+	})
 
 	-- Autoinstall/compile plugins
 	if vim.fn.isdirectory(vim.fn.glob(plugin_path)) > 0 then

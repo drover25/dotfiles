@@ -25,8 +25,6 @@ nmap("<leader>w", ":w<CR>")
 nmap("<leader>wq", ":wq<CR>")
 imap("jk", "<Esc>")
 vmap("jk", "<Esc>")
---  'Zoom'. Open current buffer in a new tab.
-nmap("<c-w>z", ":tabnew %<CR>")
 
 -- Move from the neovim terminal window to somewhere else
 tmap("<C-h>", "<C-\\><C-n><C-w>h")
