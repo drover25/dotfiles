@@ -1,0 +1,3 @@
+ci: pipeline ci
+co: mr checkout
+push: mr new --fill --fill-commit-body --push --assignee=drover25 --web
