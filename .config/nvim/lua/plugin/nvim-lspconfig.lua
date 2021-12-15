@@ -43,9 +43,13 @@ local function default_on_attach(client, bufnr)
 	local pop_opts = { border = "single" }
 	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, pop_opts)
 	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, pop_opts)
+
+	if client.resolved_capabilities.document_formatting then
+		vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+	end
 end
 
-null_ls.config({
+null_ls.setup({
 	sources = {
 		null_ls.builtins.formatting.codespell,
 		null_ls.builtins.formatting.eslint_d,
@@ -60,9 +64,6 @@ null_ls.config({
 		null_ls.builtins.code_actions.gitsigns,
 		null_ls.builtins.code_actions.shellcheck,
 	},
-})
-
-lspconfig["null-ls"].setup({
 	on_attach = function(client, bufnr)
 		default_on_attach(client, bufnr)
 		client.resolved_capabilities.document_formatting = true

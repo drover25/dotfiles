@@ -15,9 +15,9 @@ require("onenord").setup({
 		cursorline = false, -- Disable the cursorline
 		eob_lines = true, -- Hide the end-of-buffer lines
 	},
-	custom_highlights = {
-		NvimTreeNormal = { fg = colors.fg, bg = colors.active },
-	}, -- Overwrite default highlight groups
+	-- custom_highlights = {
+	-- 	NvimTreeNormal = { fg = colors.fg, bg = colors.active },
+	-- }, -- Overwrite default highlight groups
 })
 
 vim.cmd([[colorscheme onenord]])
