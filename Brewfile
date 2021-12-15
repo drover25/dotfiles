@@ -20,12 +20,12 @@ brew "fzf"
 brew "git"
 brew "git-delta"
 brew "git-extras"
-brew "glab"
 brew "glow"
 brew "go"
 brew "hadolint"
 brew "httpie"
 brew "jq"
+brew "lab"
 brew "lua"
 brew "luarocks"
 brew "mas"
@@ -48,7 +48,6 @@ brew "zsh"
 
 cask "1password"
 cask "1password-cli"
-cask "alfred"
 cask "brave-browser"
 cask "docker"
 cask "font-victor-mono"
@@ -63,7 +62,6 @@ cask "spotify"
 cask "visual-studio-code"
 cask "zsa-wally"
 
-mas "Magnet", id: 441258766
 mas "NordVPN IKE - Unlimited VPN", id: 1116599239
 mas "Spark", id: 1176895641
 mas "Tailscale", id: 1475387142
