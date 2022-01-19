@@ -36,7 +36,7 @@ local function default_on_attach(client, bufnr)
 	vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 		virtual_text = false,
 		update_in_insert = false,
-		signs = false,
+		signs = true,
 		underline = true,
 	})
 
@@ -50,6 +50,7 @@ local function default_on_attach(client, bufnr)
 end
 
 null_ls.setup({
+	debug = true,
 	sources = {
 		null_ls.builtins.formatting.codespell,
 		null_ls.builtins.formatting.eslint_d,

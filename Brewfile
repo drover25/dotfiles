@@ -62,7 +62,7 @@ cask "spotify"
 cask "visual-studio-code"
 cask "zsa-wally"
 
-mas "NordVPN IKE - Unlimited VPN", id: 1116599239
+mas "NordVPN: VPN Fast & Secure", id: 905953485
 mas "Spark", id: 1176895641
 mas "Tailscale", id: 1475387142
 
@@ -74,7 +74,6 @@ brew "flux"
 brew "fluxctl"
 brew "k3d"
 brew "k9s"
-brew "kubernetes-helm"
 brew "mongodb-database-tools"
 brew "mongosh"
 brew "n"
