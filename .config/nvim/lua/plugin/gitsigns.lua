@@ -19,8 +19,18 @@ require("gitsigns").setup({
 		["n <leader>hr"] = '<cmd>lua require"gitsigns".reset_hunk()<CR>',
 		["n <leader>hp"] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
 	},
-	watch_index = {
+	watch_gitdir = {
 		interval = 1000,
 	},
 	sign_priority = 6,
+	on_attach = function(bufnr)
+		-- Navigation
+		U.keymap.buf_map("n", "]h", "&diff ? ']h' : '<cmd>Gitsigns next_hunk<CR>'", { expr = true })
+		U.keymap.buf_map("n", "[h", "&diff ? '[h' : '<cmd>Gitsigns prev_hunk<CR>'", { expr = true })
+
+		-- Actions
+		U.keymap.buf_map("n", "<leader>hs", '<cmd>lua require"gitsigns".stage_hunk()<CR>')
+		U.keymap.buf_map("n", "<leader>hr", '<cmd>lua require"gitsigns".reset_hunk()<CR>')
+		U.keymap.buf_map("n", "<leader>hp", '<cmd>lua require"gitsigns".preview_hunk()<CR>')
+	end,
 })

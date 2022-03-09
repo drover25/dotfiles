@@ -21,7 +21,4 @@ end
 disable_default_plugins()
 
 require("core.utils")
-require("core.plugins")
-require("core.options")
-require("core.keymappings")
-require("core.appearance")
+require("vscode.plugins")

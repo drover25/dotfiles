@@ -15,34 +15,50 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim")
 	use("wbthomason/packer.nvim")
 	use("folke/lua-dev.nvim")
-
 	use({ "windwp/nvim-autopairs", setup = [[require('plugin.nvim-autopairs')]] })
-	use("ChristianChiarulli/nvcode-color-schemes.vim")
-	use({ "rmehri01/onenord.nvim", setup = [[require('plugin.onenord')]] })
-	-- use("tpope/vim-commentary")
 	use({
 		"numToStr/Comment.nvim",
 		setup = [[require('plugin.comment')]],
 	})
-	use("tpope/vim-commentary")
-	use("editorconfig/editorconfig-vim")
+	use({
+		"lukas-reineke/indent-blankline.nvim",
+		setup = [[require('plugin.indent-blankline')]],
+	})
+	use({ "phaazon/hop.nvim", setup = [[require('plugin.hop')]] })
+	use("tpope/vim-repeat")
+	use("tpope/vim-surround")
+	use("wellle/targets.vim")
+
+	use({
+		"ChristianChiarulli/nvcode-color-schemes.vim",
+	})
+	use({
+		"rmehri01/onenord.nvim",
+		setup = [[require('plugin.onenord')]],
+	})
+	use({
+		"editorconfig/editorconfig-vim",
+	})
 	use({
 		"kyazdani42/nvim-tree.lua",
 		requires = "kyazdani42/nvim-web-devicons",
 		setup = [[require('plugin.nvim-tree')]],
 	})
-	use({ "lewis6991/gitsigns.nvim", setup = [[require('plugin.gitsigns')]] })
+	use({
+		"lewis6991/gitsigns.nvim",
+		setup = [[require('plugin.gitsigns')]],
+	})
 	use({
 		"TimUntersberger/neogit",
 		setup = [[require('plugin.neogit')]],
 		requires = { "nvim-lua/plenary.nvim", "sindrets/diffview.nvim" },
 	})
-	use("kyazdani42/nvim-web-devicons")
 	use({
-		"lukas-reineke/indent-blankline.nvim",
-		setup = [[require('plugin.indent-blankline')]],
+		"kyazdani42/nvim-web-devicons",
 	})
-	use("rafamadriz/friendly-snippets")
+	use({
+		"rafamadriz/friendly-snippets",
+	})
 	use({
 		"neovim/nvim-lspconfig",
 		setup = [[require('plugin.nvim-lspconfig')]],
@@ -71,13 +87,17 @@ return packer.startup(function(use)
 			},
 		},
 	})
-	use("nvim-lua/lsp-status.nvim")
-	use({ "phaazon/hop.nvim", setup = [[require('plugin.hop')]] })
-	use("tpope/vim-repeat")
-	use("tpope/vim-obsession")
-	use({ "nvim-lualine/lualine.nvim", setup = [[require('plugin.lualine')]], requires = { "kdheepak/tabline.nvim" } })
-	use("tpope/vim-surround")
-	use("wellle/targets.vim")
+	use({
+		"nvim-lua/lsp-status.nvim",
+	})
+	use({
+		"tpope/vim-obsession",
+	})
+	use({
+		"nvim-lualine/lualine.nvim",
+		setup = [[require('plugin.lualine')]],
+		requires = { "kdheepak/tabline.nvim" },
+	})
 	use({
 		"nvim-telescope/telescope.nvim",
 		setup = [[require('plugin.telescope')]],
@@ -88,18 +108,30 @@ return packer.startup(function(use)
 			"nvim-telescope/telescope-live-grep-raw.nvim",
 		},
 	})
-	use({ "folke/trouble.nvim", setup = [[require('plugin.trouble')]] })
-	use({ "christoomey/vim-tmux-navigator" })
+	use({
+		"folke/trouble.nvim",
+		setup = [[require('plugin.trouble')]],
+	})
+	use({
+		"christoomey/vim-tmux-navigator",
+	})
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 		setup = [[require('plugin.nvim-treesitter')]],
 	})
-	use({ "nvim-treesitter/nvim-treesitter-textobjects" })
-	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
-	use({ "p00f/nvim-ts-rainbow" })
-	use({ "windwp/nvim-ts-autotag" })
-	use({ "kristijanhusak/orgmode.nvim", setup = [[require('plugin.orgmode')]] })
+	use({
+		"nvim-treesitter/nvim-treesitter-textobjects",
+	})
+	use({
+		"JoosepAlviste/nvim-ts-context-commentstring",
+	})
+	use({
+		"p00f/nvim-ts-rainbow",
+	})
+	use({
+		"windwp/nvim-ts-autotag",
+	})
 	use({
 		"folke/zen-mode.nvim",
 		setup = [[require('plugin.zen-mode')]],
@@ -107,6 +139,10 @@ return packer.startup(function(use)
 	use({
 		"stevearc/dressing.nvim",
 		setup = [[require('plugin.dressing')]],
+	})
+	use({
+		"j-hui/fidget.nvim",
+		setup = [[require('plugin.fidget')]],
 	})
 
 	-- Autoinstall/compile plugins
