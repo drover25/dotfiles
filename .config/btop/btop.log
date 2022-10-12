@@ -1,0 +1,12 @@
+
+2022/02/14 (16:02:33) | ===> btop++ v.1.2.1
+2022/02/14 (16:02:33) | ERROR: Exception in runner thread -> Proc:: -> wstring_convert::from_bytes
+
+2022/02/15 (11:34:29) | ===> btop++ v.1.2.2
+2022/02/15 (11:34:29) | ERROR: Exception in runner thread -> Proc:: -> wstring_convert::from_bytes
+
+2022/02/25 (13:41:16) | ===> btop++ v.1.2.3
+2022/02/25 (13:41:16) | ERROR: Exception in runner thread -> Proc:: -> wstring_convert::from_bytes
+
+2022/02/25 (22:53:34) | ===> btop++ v.1.2.3
+2022/02/25 (22:53:34) | ERROR: Exception in runner thread -> Proc:: -> wstring_convert::from_bytes

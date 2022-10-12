@@ -19,9 +19,3 @@ curl -L https://git.io/n-install | bash
 #-------------------
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 defaults delete -g ApplePressAndHoldEnabled
-
-#--------------
-# Iterm2 Config
-#--------------
-defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.cache/iterm2"
-defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true

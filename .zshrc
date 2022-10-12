@@ -1,7 +1,3 @@
-# Personal Zsh configuration file. It is strongly recommended to keep all
-# shell customization and configuration (including exported environment
-# variables such as PATH) in this file or in files source by it.
-#
 # Documentation: https://github.com/romkatv/zsh4humans/blob/v5/README.md.
 
 # Periodic auto-update on Zsh startup: 'ask' or 'no'.
@@ -41,7 +37,6 @@ zstyle ':z4h:ssh:*' send-extra-files '~/.nanorc' '~/.env.zsh'
 # up-to-date. Cloned files can be used after `z4h init`. This is just an
 # example. If you don't plan to use Oh My Zsh, delete this line.
 z4h install kazhala/dotbare || return
-z4h install ohmyzsh/ohmyzsh || return
 
 # Install or update core components (fzf, zsh-autosuggestions, etc.) and
 # initialize Zsh. After this point console I/O is unavailable until Zsh
@@ -71,14 +66,9 @@ z4h source ~/.env.zsh
 #
 # This is just an example that you should delete. It does nothing useful.
 z4h source $Z4H/kazhala/dotbare/dotbare.plugin.zsh
-z4h source $Z4H/ohmyzsh/ohmyzsh/lib/git.zsh
-z4h source $Z4H/ohmyzsh/ohmyzsh/plugins/colored-man-pages/*.zsh
-z4h source $Z4H/ohmyzsh/ohmyzsh/plugins/git/*.zsh
 
 # Source additional local files if they exist.
 z4h source ~/.config/zsh/plugins/*.zsh
-
-fpath+=(/usr/local/opt/git-extras/share/git-extras)
 
 # Define key bindings.
 z4h bindkey undo Ctrl+/  # undo the last command line change

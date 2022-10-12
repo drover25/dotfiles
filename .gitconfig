@@ -12,6 +12,7 @@
 [delta]
   theme = Nord
   features = side-by-side line-numbers
+  navigate = true
 [color]
   ui = true
 [commit]
@@ -19,3 +20,7 @@
 	gpgsign = false
 [pull]
 	rebase = false
+[diff]
+  algorithm = histogram
+  colorMoved = default
+  colorMovedWS = allow-indentation-change
