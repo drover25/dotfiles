@@ -10,7 +10,7 @@ an executable
 
 -- general
 lvim.log.level = "warn"
-lvim.format_on_save = { timeout = 5000 }
+lvim.format_on_save = true
 
 lvim.colorscheme = "onenord"
 
@@ -54,6 +54,8 @@ lvim.keys.normal_mode["]d"] = '<cmd>lua vim.diagnostic.goto_next({float = {borde
 -- Use which-key to add extra bindings with the leader-key prefix
 -- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 
+lvim.builtin.which_key.mappings["g"].S = { "<cmd>Neogit<cr>", "Neogit" }
+
 lvim.builtin.which_key.mappings["t"] = {
 	name = "Diagnostics",
 	t = { "<cmd>TroubleToggle<cr>", "trouble" },
@@ -67,7 +69,6 @@ lvim.builtin.which_key.mappings["t"] = {
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
-lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.dap.active = true
 lvim.builtin.project.manual_mode = true
@@ -276,24 +277,18 @@ lvim.plugins = {
 	},
 	{ "p00f/nvim-ts-rainbow" },
 	{
-		"lukas-reineke/indent-blankline.nvim",
-		event = "BufRead",
-		setup = function()
-			vim.g.indentLine_enabled = 1
-			vim.g.indent_blankline_char = "▏"
-			vim.g.indent_blankline_filetype_exclude = { "help", "terminal", "dashboard" }
-			vim.g.indent_blankline_buftype_exclude = { "terminal" }
-			vim.g.indent_blankline_show_trailing_blankline_indent = false
-			vim.g.indent_blankline_show_first_indent_level = false
+		"max397574/better-escape.nvim",
+		config = function()
+			require("better_escape").setup()
 		end,
 	},
 	{
 		"TimUntersberger/neogit",
-		requires = {
+		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"sindrets/diffview.nvim",
 		},
-		setup = function()
+		init = function()
 			local neogit = require("neogit")
 
 			neogit.setup({
@@ -330,7 +325,7 @@ lvim.plugins = {
 					-- Requires you to have `sindrets/diffview.nvim` installed.
 					-- use {
 					--   'TimUntersberger/neogit',
-					--   requires = {
+					--   dependencies = {
 					--     'nvim-lua/plenary.nvim',
 					--     'sindrets/diffview.nvim'
 					--   }

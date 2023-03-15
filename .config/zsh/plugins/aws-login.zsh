@@ -1,6 +1,6 @@
 function aws-login() {
   unset AWS_PROFILE
-  aws-google-auth -k -p "$@"
+  aws-google-auth --bg-response js_enabled -k -p "$@"
   export AWS_PROFILE="$1"
   export AWS_EB_PROFILE="$1"
 }

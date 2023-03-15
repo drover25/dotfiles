@@ -46,9 +46,11 @@ z4h init || return
 
 # Extend PATH.
 path=(
+    /opt/homebrew/bin
     /usr/local/sbin
     /usr/local/bin
     $HOME/go/bin
+    $HOME/Library/Python/3.8/bin
     /usr/sbin
     /usr/bin
     /sbin

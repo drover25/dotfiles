@@ -1,5 +1,5 @@
-export EDITOR=lvim
+export EDITOR=nvim
 export XDG_CONFIG_HOME="$HOME/.config"
 
-alias vi='lvim'
-alias vim='lvim'
+alias vi='nvim'
+alias vim='nvim'
