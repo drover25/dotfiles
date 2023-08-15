@@ -17,6 +17,7 @@
   ui = true
 [commit]
 	gpgsign = false
+  verbose = true
 [pull]
 	rebase = false
 [diff]
