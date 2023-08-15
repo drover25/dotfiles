@@ -14,3 +14,10 @@ vim.keymap.set("n", "<C-l>", "<cmd>:TmuxNavigateRight<cr>", { desc = "Go to righ
 
 -- git
 vim.keymap.set("n", "<leader>gS", "<cmd>:Neogit<cr>", { desc = "Neogit" })
+
+-- mini.surround
+-- Remap adding surrounding to Visual mode selection
+vim.keymap.del("x", "ys")
+vim.keymap.set("x", "S", [[:<C-u>lua MiniSurround.add('visual')<CR>]], { silent = true })
+-- Make special mapping for "add surrounding for line"
+vim.keymap.set("n", "yss", "ys_", { remap = true })
