@@ -1,6 +1,7 @@
 [user]
   name = Matt Drover
   email = m.drover25@gmail.com
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJBkeP613QLyDO7gHtGzLfr9XClWHGo0IgOQc3tdBknd
 [include]
   path = .gitaliases
 [includeIf "gitdir:~/gitlab/rally-legal/"]
@@ -16,7 +17,7 @@
 [color]
   ui = true
 [commit]
-	gpgsign = false
+	gpgsign = true
   verbose = true
 [pull]
 	rebase = false
@@ -29,3 +30,7 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
