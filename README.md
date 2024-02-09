@@ -1,7 +1,10 @@
 These are my dotfiles.
 
-Get going with
+To get started:
 
-```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/coldis/dotfiles/master/init.sh)"
+```bash
+$ brew install stow
+$ brew install git
+$ git clone git@github.com:coldis/dotfiles.git
+$ cd dotfiles && stow .
 ```
