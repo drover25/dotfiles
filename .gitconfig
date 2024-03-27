@@ -1,13 +1,16 @@
 [user]
   name = Matt Drover
   email = m.drover25@gmail.com
-  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJBkeP613QLyDO7gHtGzLfr9XClWHGo0IgOQc3tdBknd
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIfBa6iWbFvRS4O323+FTUXVeFmyCVGuOkKq/DGOJdwF
 [include]
   path = .gitaliases
 [includeIf "gitdir:~/gitlab/rally-legal/"]
   path = ~/gitlab/rally-legal/.gitconfig
+[includeIf "gitdir:~/github/spellbook-legal/"]
+  path = ~/github/spellbook-legal/.gitconfig
 [core]
   pager = delta
+	fsmonitor = true
 [interactive]
   diffFilter = delta --color-only
 [delta]
@@ -34,3 +37,5 @@
   format = ssh
 [gpg "ssh"]
   program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[init]
+	defaultBranch = main
