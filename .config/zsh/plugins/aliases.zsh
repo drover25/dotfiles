@@ -2,9 +2,9 @@ export BAT_THEME="Nord"
 
 alias cat='bat'
 
-alias ls='exa'
-alias la='exa -la --git'
-alias tree='exa --tree --git'
+alias ls='eza'
+alias la='eza -la --git'
+alias tree='eza --tree --git'
 
 alias grep='grep --color'
 
@@ -22,9 +22,10 @@ alias mv='mv -i'
 
 alias oid='mongosh --eval "new ObjectId().toString()" --nodb --quiet | tr -d "\n"'
 
-alias k9s='TERM=xterm-256color k9s'
 alias k=kubectl
-alias ok='okteto'
+
+alias vi='nvim'
+alias vim='nvim'
 
 alias gco='git checkout'
 alias gcb='git checkout -b'

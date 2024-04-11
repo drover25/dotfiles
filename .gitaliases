@@ -3,7 +3,7 @@
 	prune-branches = !git remote prune origin && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
 	prune-mrs = !git branch -vv | grep 'mr/' | awk '{print $1}' | xargs git branch -D
   up = !git fetch --all && git pull && git prune-branches
-  new-mr = !lab mr new --assignee drover25  --remove-source-branch --squash --reviewer noseworthy --reviewer tiffchan --reviewer chadlevesque
   push-upstream = !git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
   delete-branch = !sh -c 'git branch -D $1 && git push origin :$1' -
+  lastweek = !git log --since='1 week ago' --author=\"$(git config user.email)\" --pretty=format:'%ad %s' --date=format:'%Y-%m-%d'
 
