@@ -48,3 +48,4 @@ tma() {
   tmux new-session -s $1
 }
 
+alias awslocal='aws --profile localstack'
