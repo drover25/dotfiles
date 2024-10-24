@@ -1,5 +1,4 @@
 return {
-  { "editorconfig/editorconfig-vim", lazy = false },
   {
     "max397574/better-escape.nvim",
     lazy = false,
